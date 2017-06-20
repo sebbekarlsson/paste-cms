@@ -21,6 +21,7 @@ def run():
         'js_all',
         flask_assets.Bundle(
             'app.js',
+            'spinners.js',
             'wpostjs/wpost.js',
             'wgetjs/wget.js',
             'editables.js',
