@@ -2,8 +2,9 @@
 
 
 {% block content %}
-    <input type='hidden' name='page_id' value='startpage'/>
-    <div class='admin-editable' data-editable-type='text'>
+    <input type='hidden' name='page_id' value='{{ page.page_id }}'/>
+
+    <div class='admin-editable' data-editable-type='text' data-editable-id='bopbop'>
     </div>
 
     <button onclick='save_page();'>Save</button>

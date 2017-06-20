@@ -18,7 +18,7 @@ function save_page() {
     for (var i = 0; i < editables.length; i++) {
         var editable = {
             "editable_id": editables[i].getAttribute('data-editable-id'),
-            "text": editables[i].innerText
+            "text": editables[i].innerHTML
         };
 
         obj['editables'].push(editable);
@@ -28,7 +28,6 @@ function save_page() {
         console.log(data);
     });
 }
-
 
 function setup_editables() {
     var page_id = document.querySelector('input[name="page_id"]');
@@ -46,17 +45,28 @@ function setup_editables() {
     if (typeof window.editor == 'undefined')
         window.editor = {};
 
-    var editables = document.querySelectorAll('.admin-editable');
-    
-    // Making sure all editables has an identifier
-    for (var i = 0; i < editables.length; i++) {
-        var editable = editables[i];
+    wpost('/pagedata/' + page_id, {}, function(pagedata) {
+        window.page = JSON.parse(pagedata);
+
+        var editables = document.querySelectorAll('.admin-editable');
         
-        editable.setAttribute('data-editable-id', page_id + '_' + i);
-    }
-    
-    // initializing the editor
-    window.editor = new MediumEditor('.admin-editable', {
-        // options go here
+        // Making sure all editables has an identifier
+        for (var i = 0; i < editables.length; i++) {
+            var editable = editables[i];
+            
+            if (!editable.hasAttribute('data-editable-id')) {
+                editable.setAttribute('data-editable-id', page_id + '_' + i);
+            } else {
+                for (var ii = 0; ii < window.page['editables'].length; ii++) {
+                    if (window.page['editables'][ii]['editable_id'] == editable.getAttribute('data-editable-id'))
+                        editable.innerHTML = window['page']['editables'][ii]['text'];
+                } 
+            }
+        }
+        
+        // initializing the editor
+        window.editor = new MediumEditor('.admin-editable', {
+            // options go here
+        });
     });
 }
