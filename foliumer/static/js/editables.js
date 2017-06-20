@@ -1,15 +1,7 @@
 function save_page() {
-    var page_id = document.querySelector('input[name="page_id"]');
-    
-    if (typeof page_id == 'undefined')
-        return;
-
-    if (page_id == null)
-        return;
-
     var obj = {};
 
-    obj['page_id'] = page_id.value;
+    obj['page_id'] = window.page_id;
 
     var editables = document.querySelectorAll('.admin-editable');
 
@@ -30,22 +22,10 @@ function save_page() {
 }
 
 function setup_editables() {
-    var page_id = document.querySelector('input[name="page_id"]');
-    
-    if (typeof page_id == 'undefined')
-        return;
-
-    if (page_id == null)
-        return;
-
-    page_id = page_id.value;
-
-    console.log(page_id);
-
     if (typeof window.editor == 'undefined')
         window.editor = {};
 
-    wpost('/pagedata/' + page_id, {}, function(pagedata) {
+    wget('/pagedata/' + window.page_id, function(pagedata) {
         window.page = JSON.parse(pagedata);
 
         var editables = document.querySelectorAll('.admin-editable');
@@ -55,7 +35,7 @@ function setup_editables() {
             var editable = editables[i];
             
             if (!editable.hasAttribute('data-editable-id')) {
-                editable.setAttribute('data-editable-id', page_id + '_' + i);
+                editable.setAttribute('data-editable-id', window.page_id + '_' + i);
             } else {
                 for (var ii = 0; ii < window.page['editables'].length; ii++) {
                     if (window.page['editables'][ii]['editable_id'] == editable.getAttribute('data-editable-id'))

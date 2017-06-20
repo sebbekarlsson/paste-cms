@@ -21,7 +21,8 @@ def run():
         'js_all',
         flask_assets.Bundle(
             'app.js',
-            'wpostjs/wpost.js', 
+            'wpostjs/wpost.js',
+            'wgetjs/wget.js',
             'editables.js',
             filters=['jsmin'],
             output='js/packed.js'
