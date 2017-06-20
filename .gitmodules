@@ -1,0 +1,3 @@
+[submodule "foliumer/static/js/wpostjs"]
+	path = foliumer/static/js/wpostjs
+	url = git@github.com:sebbekarlsson/wpostjs.git

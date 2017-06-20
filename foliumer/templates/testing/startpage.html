@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <input type='hidden' name='page_id' value='startpage'/>
+    <div class='admin-editable' data-editable-type='text'>
+    </div>
+
+    <button onclick='save_page();'>Save</button>
+{% endblock %}
