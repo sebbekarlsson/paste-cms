@@ -71,7 +71,8 @@
         font-weight: 200;
         box-sizing: border-box;
         padding-left: 0.5rem;
-        padding-right: 0.5rem; }
+        padding-right: 0.5rem;
+        text-decoration: none; }
         .drop-menu ul li a:hover {
           cursor: pointer; }
         .drop-menu ul li a .material-icons {

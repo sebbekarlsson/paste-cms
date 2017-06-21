@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
                 tmp_data['dy'] -= 0.1;
 
 
-
             if (tmp_data['dy'] > 0) {
                 if (tmp_data['dy'] - 0.001 < 0) {
                     tmp_data['dy'] = 0.001;
@@ -50,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
                     tmp_data['dy'] += 0.001;
                 }
             }
-
 
             var next_top = parseInt(tmp_data['menu'].style.top.replace('px', '')) + tmp_data['dy'];
 
