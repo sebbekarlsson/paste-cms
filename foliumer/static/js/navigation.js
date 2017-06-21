@@ -33,13 +33,37 @@ document.addEventListener('DOMContentLoaded', function(e) {
             else
                 tmp_data['dy'] -= 0.1;
 
-            
+
+
+            if (tmp_data['dy'] > 0) {
+                if (tmp_data['dy'] - 0.001 < 0) {
+                    tmp_data['dy'] = 0.001;
+                } else {
+                    tmp_data['dy'] -= 0.001;
+                }
+            }
+
+            if (tmp_data['dy'] < 0) {
+                if (tmp_data['dy'] + 0.001 > 0) {
+                    tmp_data['dy'] = 0.001;
+                } else {
+                    tmp_data['dy'] += 0.001;
+                }
+            }
+
+
             var next_top = parseInt(tmp_data['menu'].style.top.replace('px', '')) + tmp_data['dy'];
 
-            if ((next_top >= 0 && drop) || (!drop && next_top <= -tmp_data['menu_height'])) {
+            if (next_top >= 0 && drop) {
+                next_top = 0;
                 clearInterval(inter);
             }
-            
+
+            if (!drop && next_top <= -tmp_data['menu_height']) {
+                next_top = -tmp_data['menu_height'];
+                clearInterval(inter);
+            }
+
             tmp_data['menu'].style.top = next_top + 'px';
         }, 0, tmp_data);
     });
