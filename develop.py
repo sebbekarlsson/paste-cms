@@ -25,6 +25,7 @@ def run():
             'wpostjs/wpost.js',
             'wgetjs/wget.js',
             'editables.js',
+            'navigation.js',
             filters=['jsmin'],
             output='js/packed.js'
         )

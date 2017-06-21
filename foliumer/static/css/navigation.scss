@@ -1,0 +1,60 @@
+$button_size: 42px;
+
+
+.drop-menu {
+    background-color: black;
+    min-width: 128px;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Arimo', sans-serif;
+
+    ul {
+        display: block;
+
+        li {
+            display: block;
+
+            a {
+                display: block;
+                color: white;
+                height: 48px;
+                line-height: 48px;
+                font-weight: 200;
+                box-sizing: border-box;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .material-icons {
+                    vertical-align: middle;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+    
+    .drop-menu-button {
+        height: $button_size;
+        width: $button_size;
+        line-height: $button_size;
+        text-align: center;
+        background-color: black;
+        position: absolute;
+        bottom: -$button_size;
+        border-bottom-right-radius: $button_size / 4;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .material-icons {
+            color: white;
+            vertical-align: middle;
+        }
+    }
+}

@@ -21,8 +21,106 @@
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0; } }
+.control-panel {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh; }
+  .control-panel .control-panel-menu {
+    width: 20%;
+    border-right-color: lightgray;
+    border-right-style: solid;
+    border-right-width: 1px; }
+    .control-panel .control-panel-menu ul {
+      display: block;
+      width: 100%; }
+      .control-panel .control-panel-menu ul li {
+        display: block;
+        width: 100%; }
+        .control-panel .control-panel-menu ul li a {
+          display: block;
+          width: 100%;
+          height: 48px;
+          line-height: 48px;
+          box-sizing: border-box;
+          padding-left: 0.5rem;
+          color: black;
+          text-decoration: none; }
+          .control-panel .control-panel-menu ul li a .material-icons {
+            vertical-align: middle;
+            color: black; }
+  .control-panel .control-panel-pane {
+    flex: 1; }
+
+.drop-menu {
+  background-color: black;
+  min-width: 128px;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'Arimo', sans-serif; }
+  .drop-menu ul {
+    display: block; }
+    .drop-menu ul li {
+      display: block; }
+      .drop-menu ul li a {
+        display: block;
+        color: white;
+        height: 48px;
+        line-height: 48px;
+        font-weight: 200;
+        box-sizing: border-box;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem; }
+        .drop-menu ul li a:hover {
+          cursor: pointer; }
+        .drop-menu ul li a .material-icons {
+          vertical-align: middle;
+          margin-left: 0.5rem; }
+  .drop-menu .drop-menu-button {
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    text-align: center;
+    background-color: black;
+    position: absolute;
+    bottom: -42px;
+    border-bottom-right-radius: 10.5px; }
+    .drop-menu .drop-menu-button:hover {
+      cursor: pointer; }
+    .drop-menu .drop-menu-button .material-icons {
+      color: white;
+      vertical-align: middle; }
+
 * {
   margin: 0;
   padding: 0; }
+
+.default-content {
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem; }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
 
 /*# sourceMappingURL=style.css.map */

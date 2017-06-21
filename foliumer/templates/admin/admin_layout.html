@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+
+{% block head %}
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id='admin-view' class='control-panel'>
+        <div class='control-panel-menu'>
+            <ul>
+                <li><a href='/admin/pages'>Pages<i class='material-icons'>note</i></a></li>
+            </ul>
+        </div>
+        <div class='control-panel-pane default-content'>
+            {% block pane %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

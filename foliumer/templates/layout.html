@@ -19,11 +19,32 @@
         type="text/css"
         media="screen"
         charset="utf-8">
+
+        <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+        <link
+        href="https://fonts.googleapis.com/css?family=Arimo:400,700"
+        rel="stylesheet">
+        
+        {% block head %}
+        {% endblock %}
         
 	<meta charset='UTF-8'/>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
     </head>
     <body>
+        <div class='drop-menu' id='main-menu'>
+            <ul>
+                <li><a>Pages <i class='material-icons'>note</i></a></li>
+                <li><a>Users <i class='material-icons'>people_outline</i></a></li>
+                <li><a>Settings <i class='material-icons'>settings</i></a></li>
+            </ul>
+            <div class='drop-menu-button'>
+                <i class='material-icons'>menu</i>
+            </div>
+        </div>
         <div id='content'>
             {% block content %}
             {% endblock %}
