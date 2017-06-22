@@ -1,4 +1,6 @@
 function save_page() {
+    toggle_global_spinner();
+
     var obj = {};
 
     obj['page_id'] = window.page_id;
@@ -17,7 +19,9 @@ function save_page() {
     }
 
     wpost('/save/', JSON.stringify(obj), function(data) {
-        console.log(data);
+        setTimeout(function(){
+            toggle_global_spinner();
+        }, 1000);
     });
 }
 

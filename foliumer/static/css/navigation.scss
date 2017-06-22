@@ -9,6 +9,7 @@ $button_size: 42px;
     top: 0;
     left: 0;
     font-family: 'Arimo', sans-serif;
+    z-index: 60;
 
     ul {
         display: block;
@@ -44,7 +45,7 @@ $button_size: 42px;
         width: $button_size;
         line-height: $button_size;
         text-align: center;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.5);
         position: absolute;
         bottom: -$button_size;
         border-bottom-right-radius: $button_size / 4;

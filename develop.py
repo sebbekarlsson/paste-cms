@@ -24,6 +24,7 @@ def run():
             'spinners.js',
             'wpostjs/wpost.js',
             'wgetjs/wget.js',
+            'backdrop.js',
             'editables.js',
             'navigation.js',
             filters=['jsmin'],

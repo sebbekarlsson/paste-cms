@@ -2,7 +2,7 @@
   width: 40px;
   height: 40px;
   margin: 100px auto;
-  background-color: #333;
+  background-color: white;
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out; }
@@ -58,7 +58,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  font-family: 'Arimo', sans-serif; }
+  font-family: 'Arimo', sans-serif;
+  z-index: 60; }
   .drop-menu ul {
     display: block; }
     .drop-menu ul li {
@@ -83,7 +84,7 @@
     width: 42px;
     line-height: 42px;
     text-align: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     bottom: -42px;
     border-bottom-right-radius: 10.5px; }
@@ -92,6 +93,19 @@
     .drop-menu .drop-menu-button .material-icons {
       color: white;
       vertical-align: middle; }
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 70;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden; }
+  .backdrop[active="0"] {
+    display: none;
+    pointer-events: none; }
 
 * {
   margin: 0;
