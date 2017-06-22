@@ -1,8 +1,10 @@
 from flask import Blueprint, render_template
+from foliumer.config import config
 from foliumer.mongo import db
+from foliumer.models import Page
 
 
-bp = Blueprint(__name__, __name__, template_folder='templates')
+bp = Blueprint(__name__, __name__, template_folder=config['templates_dir'])
 
 @bp.route('/<page_id>')
 def show(page_id):
@@ -11,4 +13,7 @@ def show(page_id):
         'page_id': page_id
     })
 
-    return render_template('testing/startpage.html', page=page)
+    #pp = Page(page_id='index.html')
+    #db.collections.insert_one(pp.export())
+
+    return render_template(page['page_id'], page=page)

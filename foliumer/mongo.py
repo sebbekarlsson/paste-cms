@@ -1,9 +1,6 @@
 from pymongo import MongoClient
+from foliumer.config import config
 
-
-config = {}
-config['database'] = {}
-config['database']['name'] = 'foliumer'
 
 client = MongoClient('localhost', 27017)
-db = client[config['database']['name']]
+db = client[config['database']]
