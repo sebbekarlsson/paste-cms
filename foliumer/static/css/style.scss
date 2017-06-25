@@ -2,6 +2,7 @@
 @import 'views.scss';
 @import 'navigation.scss';
 @import 'backdrop.scss';
+@import 'inputs.scss';
 
 
 * {
@@ -38,4 +39,8 @@
 
     /* Support for IE. */
     font-feature-settings: 'liga';
+}
+
+.push-down {
+    margin-top: 0.5rem;
 }

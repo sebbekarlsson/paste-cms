@@ -107,6 +107,21 @@
     display: none;
     pointer-events: none; }
 
+.form label {
+  display: block; }
+.form input[type='text'] {
+  display: inline-block;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom-color: lightgray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  font-size: 100%; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -137,5 +152,8 @@
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga'; }
+
+.push-down {
+  margin-top: 0.5rem; }
 
 /*# sourceMappingURL=style.css.map */

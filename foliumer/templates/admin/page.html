@@ -1,0 +1,12 @@
+{% extends 'admin/admin_layout.html' %}
+
+
+{% block pane %}
+    <form method='POST' class='form'>
+        <label for='page_template'>
+            Page template:
+            <input type='text' name='page_template' id='page_template' placeholder='index.html'/>
+        </label>
+        <input type='submit' name='page_create' value='Save' class='push-down'/>
+    </form>
+{% endblock %}
