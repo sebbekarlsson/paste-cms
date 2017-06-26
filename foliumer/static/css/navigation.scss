@@ -59,4 +59,8 @@ $button_size: 42px;
             vertical-align: middle;
         }
     }
+
+    &[data-active='0'] {
+        display: none;
+    }
 }

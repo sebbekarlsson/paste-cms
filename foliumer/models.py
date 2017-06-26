@@ -30,13 +30,15 @@ class DBObject(object):
 class Page(DBObject):
     def __init__(
             self,
-            page_id=None,
+            page_route=None,
+            page_template=None,
             editables=None,
             *args,
             **kwargs
             ):
         DBObject.__init__(self, *args, **kwargs)
-        self.page_id = page_id
+        self.page_route = page_route
+        self.page_template = page_template
         self.editables = editables
 
 class Option(DBObject):

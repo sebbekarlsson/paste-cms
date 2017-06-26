@@ -1,6 +1,36 @@
+.button {
+    height: 48px;
+    line-height: 48px;
+    background: none;
+    border: none;
+    outline: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    color: black;
+    font-weight: 200;
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 0.5rem;
+    min-width: 92px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .form {
+    label, input, p, a {
+        font-family: 'Arimo', sans-serif;
+    }
+
     label {
         display: block;
+    }
+
+    input {
+        font-size: 100%;
     }
 
     input[type='text'] {
@@ -15,5 +45,22 @@
         border-bottom-style: solid;
         border-bottom-width: 1px;
         font-size: 100%;
+    }
+
+    select {
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        background: none;
+        outline: none;
+        border: none;
+        border-radius: none;
+        background-color: black;
+        color: white;
+        font-size: 100%;
+        margin-top: 0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        text-align: center;
     }
 }

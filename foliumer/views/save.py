@@ -19,15 +19,15 @@ def show():
     except:
         return jsonify({'error': 'Could not parse Json'})
 
-    if not obj['page_id']:
+    if 'page_route' not in obj:
         return jsonify({'error': 'No page_id was sent'})
 
-    if not obj['editables']:
+    if 'editables' not in obj:
         return jsonify({'error': 'No editables was sent'})
 
     existing = db.collections.find_one({
         'structure': '#Page',
-        'page_id': obj['page_id']
+        'page_route': obj['page_route']
     })
 
     resp = None
@@ -38,7 +38,7 @@ def show():
     else:
         resp = db.collections.update_one({
             'structure': '#Page',
-            'page_id': obj['page_id']
+            'page_route': obj['page_route']
         },
         {
             '$set': obj

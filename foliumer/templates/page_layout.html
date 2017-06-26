@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div class='drop-menu' id='main-menu' data-active='1'>
+        <ul>
+            <li><a onclick='save_page();'>Save <i class='material-icons'>save</i></a></li>
+            <li><a href='/admin/page/new'>New page<i class='material-icons'>note</i></a></li>
+            <li><a>Users <i class='material-icons'>people_outline</i></a></li>
+            <li><a href='/admin'>Settings <i class='material-icons'>settings</i></a></li>
+            <li><a href='/logout'>Logout <i class='material-icons'>power_settings_new</i></a></li>
+        </ul>
+        <div class='drop-menu-button'>
+            <i class='material-icons'>menu</i>
+        </div>
+    </div>
+    {% block page_content %}
+    {% endblock %}
+{% endblock %}

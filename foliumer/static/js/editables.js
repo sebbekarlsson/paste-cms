@@ -3,7 +3,7 @@ function save_page() {
 
     var obj = {};
 
-    obj['page_id'] = window.page_id;
+    obj['page_route'] = window.page_route;
 
     var editables = document.querySelectorAll('.admin-editable');
 
@@ -29,7 +29,7 @@ function setup_editables() {
     if (typeof window.editor == 'undefined')
         window.editor = {};
 
-    wget('/pagedata/' + window.page_id, function(pagedata) {
+    wget('/pagedata/' + window.page_route, function(pagedata) {
         window.page = JSON.parse(pagedata);
 
         var editables = document.querySelectorAll('.admin-editable');
@@ -39,7 +39,7 @@ function setup_editables() {
             var editable = editables[i];
 
             if (!editable.hasAttribute('data-editable-id')) {
-                editable.setAttribute('data-editable-id', window.page_id + '_' + i);
+                editable.setAttribute('data-editable-id', window.page_route + '_' + i);
             } else {
                 if (window.page['editables'] != null) {
                     for (var ii = 0; ii < window.page['editables'].length; ii++) {

@@ -4,9 +4,17 @@
 {% block pane %}
     <form method='POST' class='form'>
         <label for='page_template'>
-            Page template:
-            <input type='text' name='page_template' id='page_template' placeholder='index.html'/>
+            Page route:
+            <input type='text' name='page_route' id='page_route' placeholder='about'/>
         </label>
-        <input type='submit' name='page_create' value='Save' class='push-down'/>
+        <label for='page_template'>
+            Page template:
+            <select name='page_template' id='page_template'>
+                {% for template in templates %}
+                    <option value='{{ template }}'>{{ template }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <input class='button' type='submit' name='page_create' value='Save' class='push-down'/>
     </form>
 {% endblock %}

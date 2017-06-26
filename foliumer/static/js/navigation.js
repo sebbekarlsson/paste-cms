@@ -65,4 +65,15 @@ document.addEventListener('DOMContentLoaded', function(e) {
             tmp_data['menu'].style.top = next_top + 'px';
         }, 0, tmp_data);
     });
+
+    // pressing escape hides the main-menu.
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode == 27) {
+            if (main_menu.getAttribute('data-active') != '1') {
+                main_menu.setAttribute('data-active', '1');
+            } else {
+                main_menu.setAttribute('data-active', '0');
+            }
+        }
+    });
 });

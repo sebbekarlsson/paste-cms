@@ -44,7 +44,8 @@
           box-sizing: border-box;
           padding-left: 0.5rem;
           color: black;
-          text-decoration: none; }
+          text-decoration: none;
+          font-family: 'Arimo', sans-serif; }
           .control-panel .control-panel-menu ul li a .material-icons {
             vertical-align: middle;
             color: black; }
@@ -93,6 +94,8 @@
     .drop-menu .drop-menu-button .material-icons {
       color: white;
       vertical-align: middle; }
+  .drop-menu[data-active='0'] {
+    display: none; }
 
 .backdrop {
   position: fixed;
@@ -107,8 +110,31 @@
     display: none;
     pointer-events: none; }
 
+.button {
+  height: 48px;
+  line-height: 48px;
+  background: none;
+  border: none;
+  outline: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  color: black;
+  font-weight: 200;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+  min-width: 92px; }
+  .button:hover {
+    cursor: pointer; }
+
+.form label, .form input, .form p, .form a {
+  font-family: 'Arimo', sans-serif; }
 .form label {
   display: block; }
+.form input {
+  font-size: 100%; }
 .form input[type='text'] {
   display: inline-block;
   width: 100%;
@@ -121,6 +147,21 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   font-size: 100%; }
+.form select {
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  background: none;
+  outline: none;
+  border: none;
+  border-radius: none;
+  background-color: black;
+  color: white;
+  font-size: 100%;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center; }
 
 * {
   margin: 0;
