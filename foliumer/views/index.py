@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, send_from_directory
 from foliumer.config import config
 from foliumer.mongo import db
 from foliumer.models import Page
@@ -25,8 +25,14 @@ def show(page_route):
     elif not page:
         page = {
             'page_template': 'index.html',
-            'page_route': '',
+            'page_route': 'INDEX',
             'editables': []
         }
 
     return render_template(page['page_template'], page=page)
+
+
+@bp.route('/content', defaults={'filename': None})
+@bp.route('/content/<filename>')
+def show_content(filename):
+    return send_from_directory(config['templates_dir'] + '/content', filename)

@@ -3,6 +3,9 @@
 @import 'navigation.scss';
 @import 'backdrop.scss';
 @import 'inputs.scss';
+@import 'cards.scss';
+@import 'typography.scss';
+@import 'tables.scss';
 
 
 * {
@@ -43,4 +46,20 @@
 
 .push-down {
     margin-top: 0.5rem;
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+.full-width {
+    min-width: 100%;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }

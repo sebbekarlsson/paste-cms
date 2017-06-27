@@ -1,6 +1,6 @@
 .button {
-    height: 48px;
-    line-height: 48px;
+    height: 32px;
+    line-height: 32px;
     background: none;
     border: none;
     outline: none;
@@ -14,6 +14,8 @@
     padding-right: 0.5rem;
     margin-top: 0.5rem;
     min-width: 92px;
+    display: block;
+    text-decoration: none;
 
     &:hover {
         cursor: pointer;
@@ -21,6 +23,8 @@
 }
 
 .form {
+    width: 100%;
+
     label, input, p, a {
         font-family: 'Arimo', sans-serif;
     }
@@ -33,7 +37,7 @@
         font-size: 100%;
     }
 
-    input[type='text'] {
+    input[type='text'], input[type='password'], input[type='email'] {
         display: inline-block;
         width: 100%;
         height: 48px;

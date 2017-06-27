@@ -1,0 +1,17 @@
+.table {
+    text-align: left;
+    font-family: 'Arimo', sans-serif;    
+
+    th, td {
+        padding: 0.5rem;
+    }
+
+    td {
+        font-weight: 200;
+    }
+
+    tr {
+        height: 32px;
+        line-height: 32px;
+    }
+}

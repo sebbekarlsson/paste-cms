@@ -20,6 +20,7 @@ def run():
     env.register(
         'js_all',
         flask_assets.Bundle(
+            'utils.js',
             'app.js',
             'spinners.js',
             'wpostjs/wpost.js',

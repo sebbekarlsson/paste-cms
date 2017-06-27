@@ -2,18 +2,23 @@
 
 
 {% block content %}
-    <div class='drop-menu' id='main-menu' data-active='1'>
-        <ul>
-            <li><a onclick='save_page();'>Save <i class='material-icons'>save</i></a></li>
-            <li><a href='/admin/page/new'>New page<i class='material-icons'>note</i></a></li>
-            <li><a>Users <i class='material-icons'>people_outline</i></a></li>
-            <li><a href='/admin'>Settings <i class='material-icons'>settings</i></a></li>
-            <li><a href='/logout'>Logout <i class='material-icons'>power_settings_new</i></a></li>
-        </ul>
-        <div class='drop-menu-button'>
-            <i class='material-icons'>menu</i>
+    <input type='hidden' name='page_route' value='{{ page.page_route }}'/>    
+    {% if is_loggedin() %}
+        <input type='hidden' name='user_id' value='{{ get_current_user()._id }}'/>
+            
+        <div class='drop-menu' id='main-menu' data-active='1'>
+            <ul>
+                <li><a onclick='save_page();'>Save <i class='material-icons'>save</i></a></li>
+                <li><a href='/admin/page/new'>New page<i class='material-icons'>note</i></a></li>
+                <li><a>Users <i class='material-icons'>people_outline</i></a></li>
+                <li><a href='/admin'>Settings <i class='material-icons'>settings</i></a></li>
+                <li><a href='/logout'>Logout <i class='material-icons'>power_settings_new</i></a></li>
+            </ul>
+            <div class='drop-menu-button'>
+                <i class='material-icons'>menu</i>
+            </div>
         </div>
-    </div>
+    {% endif %}
     {% block page_content %}
     {% endblock %}
 {% endblock %}

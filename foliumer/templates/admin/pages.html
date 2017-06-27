@@ -1,0 +1,29 @@
+{% extends 'admin/admin_layout.html' %}
+
+
+{% block pane %}
+    <div class='section'>
+        <a href='/admin/page/new' class='button'>New Page +</a>
+    </div>
+    <table class='table push-down'>
+        <thead>
+            <th>Route</th>
+            <th>Template</th>
+        </thead>
+        <tbody>
+            {% for page in pages %}
+                <tr>
+                    <td>{{ page.page_route }}</td>
+                    <td>{{ page.page_template }}</td>
+                    <td><a class='button' href='/admin/page/{{ page._id }}'>Edit</a></td>
+                    <td>
+                        <form method='POST'>
+                            <input type='hidden' name='page_id' value='{{ page._id }}'/>
+                            <input type='submit' name='delete' value='Delete' class='button'/>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

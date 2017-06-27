@@ -50,9 +50,11 @@ function setup_editables() {
             }
         }
 
-        // initializing the editor
-        window.editor = new MediumEditor('.admin-editable', {
-            // options go here
-        });
+        if (is_loggedin()) {
+            // initializing the editor
+            window.editor = new MediumEditor('.admin-editable', {
+                // options go here
+            });
+        }
     });
 }

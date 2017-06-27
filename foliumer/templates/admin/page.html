@@ -5,16 +5,29 @@
     <form method='POST' class='form'>
         <label for='page_template'>
             Page route:
-            <input type='text' name='page_route' id='page_route' placeholder='about'/>
+            <input
+            {% if page %}
+                value='{{ page.page_route }}'
+            {% endif %}
+            type='text' name='page_route' id='page_route' placeholder='about'/>
         </label>
         <label for='page_template'>
             Page template:
             <select name='page_template' id='page_template'>
                 {% for template in templates %}
-                    <option value='{{ template }}'>{{ template }}</option>
+                    <option
+                    {% if page %}
+                        {% if page.page_template == template %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                    value='{{ template }}'>{{ template }}</option>
                 {% endfor %}
             </select>
         </label>
         <input class='button' type='submit' name='page_create' value='Save' class='push-down'/>
     </form>
+    <div class='section'>
+        <a href='/{{ page.page_route }}' class='button'>Edit on site</a>
+    </div>
 {% endblock %}
