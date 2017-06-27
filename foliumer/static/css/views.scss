@@ -1,3 +1,6 @@
+@import 'mixins.scss';
+
+
 .control-panel {
     display: flex;
     flex-direction: row;
@@ -26,7 +29,7 @@
                     padding-left: 0.5rem;
                     color: black;
                     text-decoration: none;
-                    font-family: 'Arimo', sans-serif;
+                    @include set-font();
                     
 
                     .material-icons {

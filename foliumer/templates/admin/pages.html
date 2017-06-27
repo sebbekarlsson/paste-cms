@@ -9,6 +9,8 @@
         <thead>
             <th>Route</th>
             <th>Template</th>
+            <th></th>
+            <th></th>
         </thead>
         <tbody>
             {% for page in pages %}
@@ -19,7 +21,7 @@
                     <td>
                         <form method='POST'>
                             <input type='hidden' name='page_id' value='{{ page._id }}'/>
-                            <input type='submit' name='delete' value='Delete' class='button'/>
+                            <input type='submit' name='delete' value='delete_forever' class='button material-icons'/>
                         </form>
                     </td>
                 </tr>

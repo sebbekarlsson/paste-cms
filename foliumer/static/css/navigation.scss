@@ -1,5 +1,7 @@
-$button_size: 42px;
+@import 'mixins.scss';
 
+
+$button_size: 42px;
 
 .drop-menu {
     background-color: black;
@@ -8,7 +10,7 @@ $button_size: 42px;
     position: fixed;
     top: 0;
     left: 0;
-    font-family: 'Arimo', sans-serif;
+    @include set-font();
     z-index: 60;
 
     ul {

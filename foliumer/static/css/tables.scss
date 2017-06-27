@@ -1,7 +1,11 @@
+@import 'mixins.scss';
+
+
 .table {
     text-align: left;
-    font-family: 'Arimo', sans-serif;
+    @include set-font();
     width: 100%;
+    border-collapse: collapse;
 
     th, td {
         padding: 0.5rem;
@@ -14,5 +18,8 @@
     tr {
         height: 32px;
         line-height: 32px;
+        border-bottom-style: solid;
+        border-bottom-color: lightgray;
+        border-bottom-width: 1px;
     }
 }

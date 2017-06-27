@@ -1,3 +1,6 @@
+@import 'mixins.scss';
+
+
 .button {
     height: 32px;
     line-height: 32px;
@@ -14,7 +17,7 @@
     padding-right: 0.5rem;
     margin-top: 0.5rem;
     min-width: 92px;
-    display: block;
+    display: inline-block;
     text-decoration: none;
 
     &:hover {
@@ -26,7 +29,7 @@
     width: 100%;
 
     label, input, p, a {
-        font-family: 'Arimo', sans-serif;
+        @include set-font();
     }
 
     label {

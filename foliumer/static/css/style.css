@@ -45,7 +45,7 @@
           padding-left: 0.5rem;
           color: black;
           text-decoration: none;
-          font-family: 'Arimo', sans-serif; }
+          font-family: 'Source Sans Pro', sans-serif; }
           .control-panel .control-panel-menu ul li a .material-icons {
             vertical-align: middle;
             color: black;
@@ -60,7 +60,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   z-index: 60; }
   .drop-menu ul {
     display: block; }
@@ -127,7 +127,7 @@
   padding-right: 0.5rem;
   margin-top: 0.5rem;
   min-width: 92px;
-  display: block;
+  display: inline-block;
   text-decoration: none; }
   .button:hover {
     cursor: pointer; }
@@ -135,7 +135,7 @@
 .form {
   width: 100%; }
   .form label, .form input, .form p, .form a {
-    font-family: 'Arimo', sans-serif; }
+    font-family: 'Source Sans Pro', sans-serif; }
   .form label {
     display: block; }
   .form input {
@@ -176,19 +176,23 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 h1, h2, h3, h4, h5, h6, p, a {
-  font-family: 'Arimo', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif; }
 
 .table {
   text-align: left;
-  font-family: 'Arimo', sans-serif;
-  width: 100%; }
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  border-collapse: collapse; }
   .table th, .table td {
     padding: 0.5rem; }
   .table td {
     font-weight: 200; }
   .table tr {
     height: 32px;
-    line-height: 32px; }
+    line-height: 32px;
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+    border-bottom-width: 1px; }
 
 * {
   margin: 0;
