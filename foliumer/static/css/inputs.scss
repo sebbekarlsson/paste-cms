@@ -2,8 +2,8 @@
 
 
 .button {
-    height: 32px;
     line-height: 32px;
+    vertical-align: middle;
     background: none;
     border: none;
     outline: none;
@@ -15,7 +15,6 @@
     text-align: center;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    margin-top: 0.5rem;
     min-width: 92px;
     display: inline-block;
     text-decoration: none;
@@ -27,6 +26,10 @@
 
 .form {
     width: 100%;
+
+    .button, input, a, label, select {
+        margin-top: 0.5rem;
+    }
 
     label, input, p, a {
         @include set-font();
@@ -55,19 +58,21 @@
     }
 
     select {
-        display: block;
-        height: 48px;
-        line-height: 48px;
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
         background: none;
         outline: none;
         border: none;
-        border-radius: none;
-        background-color: black;
-        color: white;
-        font-size: 100%;
-        margin-top: 0.5rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        text-align: center;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 4px;
+        border-color: lightgray;
+    }
+
+    textarea {
+        display: block;
+        width: 100%;
+        min-height: 360px;
     }
 }

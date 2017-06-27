@@ -25,9 +25,7 @@
                 {% endfor %}
             </select>
         </label>
+        <a href='/{{ page.page_route }}' class='button'>Edit on site</a>
         <input class='button' type='submit' name='page_create' value='Save' class='push-down'/>
     </form>
-    <div class='section'>
-        <a href='/{{ page.page_route }}' class='button'>Edit on site</a>
-    </div>
 {% endblock %}

@@ -77,3 +77,8 @@ def show_pages():
     )
 
     return render_template('admin/pages.html', pages=pages)
+
+@bp.route('/settings', methods=['POST', 'GET'])
+@login_required
+def show_settings():
+    return render_template('admin/settings.html')
