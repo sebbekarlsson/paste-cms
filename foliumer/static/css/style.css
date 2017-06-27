@@ -48,7 +48,8 @@
           font-family: 'Arimo', sans-serif; }
           .control-panel .control-panel-menu ul li a .material-icons {
             vertical-align: middle;
-            color: black; }
+            color: black;
+            margin-right: 0.5rem; }
   .control-panel .control-panel-pane {
     flex: 1; }
 
@@ -179,7 +180,8 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 .table {
   text-align: left;
-  font-family: 'Arimo', sans-serif; }
+  font-family: 'Arimo', sans-serif;
+  width: 100%; }
   .table th, .table td {
     padding: 0.5rem; }
   .table td {
