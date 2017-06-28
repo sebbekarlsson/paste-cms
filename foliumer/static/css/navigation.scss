@@ -3,71 +3,73 @@
 
 $button_size: 42px;
 
-.drop-menu {
-    background-color: black;
-    min-width: 128px;
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    @include set-font();
-    z-index: 60;
+.paste-styled {
+    .drop-menu {
+        background-color: black;
+        min-width: 128px;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include set-font();
+        z-index: 60;
 
-    ul {
-        display: block !important;
-        list-style: none !important;
-        margin: 0px !important;
-        padding-left: 0px !important;
-
-        li {
-            display: block;
+        ul {
+            display: block !important;
+            list-style: none !important;
+            margin: 0px !important;
             padding-left: 0px !important;
 
-            a {
+            li {
                 display: block;
-                color: white;
-                height: 48px;
-                line-height: 48px;
-                font-weight: 200;
-                box-sizing: border-box;
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
-                text-decoration: none;
-                border-bottom: none !important;
+                padding-left: 0px !important;
 
-                &:hover {
-                    cursor: pointer;
-                }
+                a {
+                    display: block;
+                    color: white;
+                    height: 48px;
+                    line-height: 48px;
+                    font-weight: 200;
+                    box-sizing: border-box;
+                    padding-left: 0.5rem;
+                    padding-right: 0.5rem;
+                    text-decoration: none;
+                    border-bottom: none !important;
 
-                .material-icons {
-                    vertical-align: middle;
-                    margin-left: 0.5rem;
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    .material-icons {
+                        vertical-align: middle;
+                        margin-left: 0.5rem;
+                    }
                 }
             }
         }
-    }
-    
-    .drop-menu-button {
-        height: $button_size;
-        width: $button_size;
-        line-height: $button_size;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        bottom: -$button_size;
-        border-bottom-right-radius: $button_size / 4;
 
-        &:hover {
-            cursor: pointer;
+        .drop-menu-button {
+            height: $button_size;
+            width: $button_size;
+            line-height: $button_size;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: -$button_size;
+            border-bottom-right-radius: $button_size / 4;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .material-icons {
+                color: white;
+                vertical-align: middle;
+            }
         }
 
-        .material-icons {
-            color: white;
-            vertical-align: middle;
+        &[data-active='0'] {
+            display: none;
         }
-    }
-
-    &[data-active='0'] {
-        display: none;
     }
 }

@@ -8,16 +8,18 @@
 {% endblock %}
 
 {% block content %}
-    <div id='admin-view' class='control-panel'>
-        <div class='control-panel-menu'>
-            <ul>
-                <li><a href='/admin/pages'><i class='material-icons'>note</i>Pages</a></li>
-                <li><a href='/admin/settings'><i class='material-icons'>settings</i>Settings</a></li>
-            </ul>
-        </div>
-        <div class='control-panel-pane default-content'>
-            {% block pane %}
-            {% endblock %}
+    <div class='paste-styled'>
+        <div id='admin-view' class='control-panel'>
+            <div class='control-panel-menu'>
+                <ul>
+                    <li><a href='/admin/pages'><i class='material-icons'>note</i>Pages</a></li>
+                    <li><a href='/admin/settings'><i class='material-icons'>settings</i>Settings</a></li>
+                </ul>
+            </div>
+            <div class='control-panel-pane default-content'>
+                {% block pane %}
+                {% endblock %}
+            </div>
         </div>
     </div>
 {% endblock %}

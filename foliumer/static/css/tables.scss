@@ -1,25 +1,27 @@
 @import 'mixins.scss';
 
 
-.table {
-    text-align: left;
-    @include set-font();
-    width: 100%;
-    border-collapse: collapse;
+.paste-styled {
+    .table {
+        text-align: left;
+        @include set-font();
+        width: 100%;
+        border-collapse: collapse;
 
-    th, td {
-        padding: 0.5rem;
-    }
+        th, td {
+            padding: 0.5rem;
+        }
 
-    td {
-        font-weight: 200;
-    }
+        td {
+            font-weight: 200;
+        }
 
-    tr {
-        height: 32px;
-        line-height: 32px;
-        border-bottom-style: solid;
-        border-bottom-color: lightgray;
-        border-bottom-width: 1px;
+        tr {
+            height: 32px;
+            line-height: 32px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray;
+            border-bottom-width: 1px;
+        }
     }
 }

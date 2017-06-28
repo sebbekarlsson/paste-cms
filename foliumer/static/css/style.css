@@ -1,4 +1,4 @@
-.spinner {
+.paste-styled .spinner {
   width: 40px;
   height: 40px;
   margin: 100px auto;
@@ -6,7 +6,6 @@
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out; }
-
 @-webkit-keyframes sk-scaleout {
   0% {
     -webkit-transform: scale(0); }
@@ -21,22 +20,22 @@
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0; } }
-.control-panel {
+.paste-styled .control-panel {
   display: flex;
   flex-direction: row;
   min-height: 100vh; }
-  .control-panel .control-panel-menu {
+  .paste-styled .control-panel .control-panel-menu {
     width: 20%;
     border-right-color: lightgray;
     border-right-style: solid;
     border-right-width: 1px; }
-    .control-panel .control-panel-menu ul {
+    .paste-styled .control-panel .control-panel-menu ul {
       display: block;
       width: 100%; }
-      .control-panel .control-panel-menu ul li {
+      .paste-styled .control-panel .control-panel-menu ul li {
         display: block;
         width: 100%; }
-        .control-panel .control-panel-menu ul li a {
+        .paste-styled .control-panel .control-panel-menu ul li a {
           display: block;
           width: 100%;
           height: 48px;
@@ -46,14 +45,14 @@
           color: black;
           text-decoration: none;
           font-family: 'Source Sans Pro', sans-serif; }
-          .control-panel .control-panel-menu ul li a .material-icons {
+          .paste-styled .control-panel .control-panel-menu ul li a .material-icons {
             vertical-align: middle;
             color: black;
             margin-right: 0.5rem; }
-  .control-panel .control-panel-pane {
+  .paste-styled .control-panel .control-panel-pane {
     flex: 1; }
 
-.drop-menu {
+.paste-styled .drop-menu {
   background-color: black;
   min-width: 128px;
   display: block;
@@ -62,15 +61,15 @@
   left: 0;
   font-family: 'Source Sans Pro', sans-serif;
   z-index: 60; }
-  .drop-menu ul {
+  .paste-styled .drop-menu ul {
     display: block !important;
     list-style: none !important;
     margin: 0px !important;
     padding-left: 0px !important; }
-    .drop-menu ul li {
+    .paste-styled .drop-menu ul li {
       display: block;
       padding-left: 0px !important; }
-      .drop-menu ul li a {
+      .paste-styled .drop-menu ul li a {
         display: block;
         color: white;
         height: 48px;
@@ -81,12 +80,12 @@
         padding-right: 0.5rem;
         text-decoration: none;
         border-bottom: none !important; }
-        .drop-menu ul li a:hover {
+        .paste-styled .drop-menu ul li a:hover {
           cursor: pointer; }
-        .drop-menu ul li a .material-icons {
+        .paste-styled .drop-menu ul li a .material-icons {
           vertical-align: middle;
           margin-left: 0.5rem; }
-  .drop-menu .drop-menu-button {
+  .paste-styled .drop-menu .drop-menu-button {
     height: 42px;
     width: 42px;
     line-height: 42px;
@@ -95,15 +94,15 @@
     position: absolute;
     bottom: -42px;
     border-bottom-right-radius: 10.5px; }
-    .drop-menu .drop-menu-button:hover {
+    .paste-styled .drop-menu .drop-menu-button:hover {
       cursor: pointer; }
-    .drop-menu .drop-menu-button .material-icons {
+    .paste-styled .drop-menu .drop-menu-button .material-icons {
       color: white;
       vertical-align: middle; }
-  .drop-menu[data-active='0'] {
+  .paste-styled .drop-menu[data-active='0'] {
     display: none; }
 
-.backdrop {
+.paste-styled .backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -112,11 +111,11 @@
   width: 100%;
   height: 100vh;
   overflow-y: hidden; }
-  .backdrop[active="0"] {
+  .paste-styled .backdrop[active="0"] {
     display: none;
     pointer-events: none; }
 
-.button {
+.paste-styled .button {
   line-height: 32px;
   vertical-align: middle;
   background: none;
@@ -133,20 +132,19 @@
   min-width: 92px;
   display: inline-block;
   text-decoration: none; }
-  .button:hover {
+  .paste-styled .button:hover {
     cursor: pointer; }
-
-.form {
+.paste-styled .form {
   width: 100%; }
-  .form .button, .form input, .form a, .form label, .form select {
+  .paste-styled .form .button, .paste-styled .form input, .paste-styled .form a, .paste-styled .form label, .paste-styled .form select {
     margin-top: 0.5rem; }
-  .form label, .form input, .form p, .form a {
+  .paste-styled .form label, .paste-styled .form input, .paste-styled .form p, .paste-styled .form a {
     font-family: 'Source Sans Pro', sans-serif; }
-  .form label {
+  .paste-styled .form label {
     display: block; }
-  .form input {
+  .paste-styled .form input {
     font-size: 100%; }
-  .form input[type='text'], .form input[type='password'], .form input[type='email'] {
+  .paste-styled .form input[type='text'], .paste-styled .form input[type='password'], .paste-styled .form input[type='email'] {
     display: inline-block;
     width: 100%;
     height: 48px;
@@ -158,7 +156,7 @@
     border-bottom-style: solid;
     border-bottom-width: 1px;
     font-size: 100%; }
-  .form select {
+  .paste-styled .form select {
     display: inline-block;
     height: 32px;
     line-height: 32px;
@@ -169,47 +167,45 @@
     border-width: 1px;
     border-radius: 4px;
     border-color: lightgray; }
-  .form textarea {
+  .paste-styled .form textarea {
     display: block;
     width: 100%;
     min-height: 360px; }
 
-.card {
+.paste-styled .card {
   display: block;
   box-sizing: border-box;
   padding: 0.5rem;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
-h1, h2, h3, h4, h5, h6, p, a {
+.paste-styled h1, .paste-styled h2, .paste-styled h3, .paste-styled h4, .paste-styled h5, .paste-styled h6, .paste-styled p, .paste-styled a {
   font-family: 'Source Sans Pro', sans-serif; }
 
-.table {
+.paste-styled .table {
   text-align: left;
   font-family: 'Source Sans Pro', sans-serif;
   width: 100%;
   border-collapse: collapse; }
-  .table th, .table td {
+  .paste-styled .table th, .paste-styled .table td {
     padding: 0.5rem; }
-  .table td {
+  .paste-styled .table td {
     font-weight: 200; }
-  .table tr {
+  .paste-styled .table tr {
     height: 32px;
     line-height: 32px;
     border-bottom-style: solid;
     border-bottom-color: lightgray;
     border-bottom-width: 1px; }
 
-* {
+.paste-styled * {
   margin: 0;
   padding: 0; }
-
-.default-content {
+.paste-styled .default-content {
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
-
-.material-icons {
+.paste-styled .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -230,21 +226,20 @@ h1, h2, h3, h4, h5, h6, p, a {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga'; }
-
-.push-down {
+.paste-styled .push-down {
   margin-top: 0.5rem; }
-
-.full-height {
+.paste-styled .full-height {
   min-height: 100vh; }
-
-.full-width {
+.paste-styled .full-width {
   min-width: 100%; }
-
-.centered-content {
+.paste-styled .centered-content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center; }
+
+.admin-editable p {
+  margin: 0px !important; }
 
 /*# sourceMappingURL=style.css.map */

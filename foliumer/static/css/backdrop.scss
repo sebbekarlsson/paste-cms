@@ -1,15 +1,17 @@
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 70;
-    width: 100%;
-    height: 100vh;
-    overflow-y: hidden;
+.paste-styled {
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 70;
+        width: 100%;
+        height: 100vh;
+        overflow-y: hidden;
 
-    &[active="0"] {
-        display: none;
-        pointer-events: none;
+        &[active="0"] {
+            display: none;
+            pointer-events: none;
+        }
     }
 }

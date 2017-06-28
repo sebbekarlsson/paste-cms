@@ -1,7 +1,9 @@
-.card {
-    display: block;
-    box-sizing: border-box;
-    padding: 0.5rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+.paste-styled {
+    .card {
+        display: block;
+        box-sizing: border-box;
+        padding: 0.5rem;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
 }
