@@ -1,4 +1,4 @@
-from flask import session, redirect
+from flask import session, redirect, request
 from foliumer.mongo import db
 from functools import wraps
 
@@ -26,10 +26,16 @@ def editable_area(id=0, page_route=None):
             'structure': '#Page',
             'page_route': page_route
         })
+        
+        if request.path != page_route and not (page_route == 'INDEX' and request.path == '/'):
+            for editable in page['editables']:
+                if editable['editable_id'] == id:
+                    if is_loggedin():
+                        page_route = page_route.replace('INDEX', '/')
 
-        for editable in page['editables']:
-            if editable['editable_id'] == id:
-                return editable['text']
+                        return editable['text'] + '<a href="{}">Edit<a>'.format(page_route)
+                    else:
+                        return editable['text']
 
     return """<div class='admin-editable' data-editable-type='text' data-editable-id='IDENTIFIER'>
         </div>""".replace('IDENTIFIER', id)
