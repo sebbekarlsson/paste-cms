@@ -33,6 +33,6 @@ def show(page_route):
 
 
 @bp.route('/content', defaults={'filename': None})
-@bp.route('/content/<filename>')
+@bp.route('/content/<path:filename>')
 def show_content(filename):
-    return send_from_directory(config['templates_dir'] + '/content', filename)
+    return send_from_directory(config['templates_dir'], filename)

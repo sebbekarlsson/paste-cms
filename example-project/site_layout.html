@@ -1,0 +1,86 @@
+{% extends 'page_layout.html' %}
+
+
+
+{% block head %}
+    <title>Stellar by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="/content/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/content/assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="/content/assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="/content/assets/css/ie8.css" /><![endif]-->
+{% endblock %}
+
+{% block page_content %}
+    <!-- Wrapper -->
+    <div id="wrapper">
+        
+        <!-- Header -->
+        <header id="header" class="alt">
+            <span class="logo"><img src="/content/images/logo.svg" alt="" /></span>
+            <h1>{{ editable_area('main-title') | safe }}</h1>
+            {{ editable_area('main-text') | safe }}
+        </header>
+        
+
+        {% block nav %}
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="#intro" class="active">Introduction</a></li>
+                    <li><a href="#first">First Section</a></li>
+                    <li><a href="#second">Second Section</a></li>
+                    <li><a href="#cta">Get Started</a></li>
+                </ul>
+            </nav>
+        {% endblock %}
+        
+        <!-- Main -->
+        <div id="main">
+            
+            {% block site_content %}
+            {% endblock %}
+        </div>
+        
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <h2>{{ editable_area('footer-title', page_route='INDEX') | safe }}</h2>
+                {{ editable_area('footer-text', page_route='INDEX') | safe }}
+                <ul class="actions">
+                    <li><a href="generic.html" class="button">Learn More</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Etiam feugiat</h2>
+                <dl class="alt">
+                    <dt>Address</dt>
+                    <dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+                    <dt>Phone</dt>
+                    <dd>(000) 000-0000 x 0000</dd>
+                    <dt>Email</dt>
+                    <dd><a href="#">information@untitled.tld</a></dd>
+                </dl>
+                <ul class="icons">
+                    <li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+                    <li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+                </ul>
+            </section>
+            <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
+        
+    </div>
+    
+    <!-- Scripts -->
+    <script src="/content/assets/js/jquery.min.js"></script>
+    <script src="/content/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/content/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/content/assets/js/skel.min.js"></script>
+    <script src="/content/assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="/content/assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="/content/assets/js/main.js"></script>
+{% endblock %}

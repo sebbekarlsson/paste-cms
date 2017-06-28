@@ -63,9 +63,13 @@
   font-family: 'Source Sans Pro', sans-serif;
   z-index: 60; }
   .drop-menu ul {
-    display: block; }
+    display: block !important;
+    list-style: none !important;
+    margin: 0px !important;
+    padding-left: 0px !important; }
     .drop-menu ul li {
-      display: block; }
+      display: block;
+      padding-left: 0px !important; }
       .drop-menu ul li a {
         display: block;
         color: white;
@@ -75,7 +79,8 @@
         box-sizing: border-box;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        text-decoration: none; }
+        text-decoration: none;
+        border-bottom: none !important; }
         .drop-menu ul li a:hover {
           cursor: pointer; }
         .drop-menu ul li a .material-icons {

@@ -43,8 +43,11 @@ function setup_editables() {
             } else {
                 if (window.page['editables'] != null) {
                     for (var ii = 0; ii < window.page['editables'].length; ii++) {
-                        if (window.page['editables'][ii]['editable_id'] == editable.getAttribute('data-editable-id'))
+                        var override = false;
+
+                        if (window.page['editables'][ii]['editable_id'] == editable.getAttribute('data-editable-id') && !override) {
                             editable.innerHTML = window['page']['editables'][ii]['text'];
+                        }
                     }
                 }
             }

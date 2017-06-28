@@ -2,5 +2,7 @@
 
 
 {% block pane %}
-    Settings
+    <form method='POST' class='form'>
+        <input type='submit' name='delete_all_data' class='button' id='delete_all_data' value='Purge database'/>
+    </form>
 {% endblock %}

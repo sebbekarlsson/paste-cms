@@ -81,4 +81,8 @@ def show_pages():
 @bp.route('/settings', methods=['POST', 'GET'])
 @login_required
 def show_settings():
+    if request.method == 'POST':
+        if request.form.get('delete_all_data'):
+            db.collections.remove({})
+
     return render_template('admin/settings.html')

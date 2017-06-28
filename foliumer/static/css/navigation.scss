@@ -14,10 +14,14 @@ $button_size: 42px;
     z-index: 60;
 
     ul {
-        display: block;
+        display: block !important;
+        list-style: none !important;
+        margin: 0px !important;
+        padding-left: 0px !important;
 
         li {
             display: block;
+            padding-left: 0px !important;
 
             a {
                 display: block;
@@ -29,6 +33,7 @@ $button_size: 42px;
                 padding-left: 0.5rem;
                 padding-right: 0.5rem;
                 text-decoration: none;
+                border-bottom: none !important;
 
                 &:hover {
                     cursor: pointer;

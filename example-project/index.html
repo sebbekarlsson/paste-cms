@@ -1,7 +1,100 @@
-{% extends 'app.html' %}
+{% extends 'site_layout.html' %}
 
 
-{% block appcontent %}
-    <div class='admin-editable' data-editable-type='text' data-editable-id='bopbopz'>
-    </div>
+{% block site_content %}
+    <!-- Introduction -->
+    <section id="intro" class="main">
+        <div class="spotlight">
+            <div class="content">
+                <header class="major">
+                    <h2>{{ editable_area('major-title') | safe }}</h2>
+                </header>
+                {{ editable_area('major-text') | safe }} 
+                <ul class="actions">
+                    <li><a href="generic.html" class="button">Learn More</a></li>
+                </ul>
+            </div>
+            <span class="image"><img src="/content/images/pic01.jpg" alt="" /></span>
+        </div>
+    </section>
+    
+    <!-- First Section -->
+    <section id="first" class="main special">
+        <header class="major">
+            <h2>{{ editable_area('major2-title') | safe }}</h2>
+        </header>
+        <ul class="features">
+            <li>
+                <span class="icon major style1 fa-code"></span>
+                <h3>{{ editable_area('icons0-title') | safe }}</h3>
+                <p>{{ editable_area('icons0-text') | safe }}</p>
+            </li>
+            <li>
+                <span class="icon major style3 fa-copy"></span>
+                <h3>{{ editable_area('icons1-title') | safe }}</h3>
+                <p>{{ editable_area('icons1-text') | safe }}</p>
+            </li>
+            <li>
+                <span class="icon major style5 fa-diamond"></span>
+                <h3>{{ editable_area('icons2-title') | safe }}</h3>
+                <p>{{ editable_area('icons2-text') | safe }}</p>
+            </li>
+        </ul>
+        <footer class="major">
+            <ul class="actions">
+                <li><a href="generic.html" class="button">Learn More</a></li>
+            </ul>
+        </footer>
+    </section>
+    
+    <!-- Second Section -->
+    <section id="second" class="main special">
+        <header class="major">
+            <h2>{{ editable_area('major3-title') | safe }}</h2>
+            <p>{{ editable_area('major3-text') | safe }}</p>
+        </header>
+        <ul class="statistics">
+            <li class="style1">
+                <span class="icon fa-code-fork"></span>
+                <strong>5,120</strong> Etiam
+            </li>
+            <li class="style2">
+                <span class="icon fa-folder-open-o"></span>
+                <strong>8,192</strong> Magna
+            </li>
+            <li class="style3">
+                <span class="icon fa-signal"></span>
+                <strong>2,048</strong> Tempus
+            </li>
+            <li class="style4">
+                <span class="icon fa-laptop"></span>
+                <strong>4,096</strong> Aliquam
+            </li>
+            <li class="style5">
+                <span class="icon fa-diamond"></span>
+                <strong>1,024</strong> Nullam
+            </li>
+        </ul>
+        <p class="content">{{ editable_area('statistics-text') | safe }}</p>
+        <footer class="major">
+            <ul class="actions">
+                <li><a href="generic.html" class="button">Learn More</a></li>
+            </ul>
+        </footer>
+    </section>
+    
+    <!-- Get Started -->
+    <section id="cta" class="main special">
+        <header class="major">
+            <h2>{{ editable_area('finish-title') | safe }}</h2>
+            <p>{{ editable_area('finish-text') | safe }}</p>
+        </header>
+        <footer class="major">
+            <ul class="actions">
+                <li><a href="generic.html" class="button special">Get Started</a></li>
+                <li><a href="generic.html" class="button">Learn More</a></li>
+            </ul>
+        </footer>
+    </section>
+
 {% endblock %}

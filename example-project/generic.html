@@ -1,0 +1,26 @@
+{% extends 'site_layout.html' %}
+
+
+
+{% block site_content %}
+
+    {% block nav %}
+    {% endblock %}
+
+    <!-- Header -->
+    <header id="header">
+        <h1>{{ editable_area('generic-tite') | safe }}</h1>
+        {{ editable_area('generic-desc') | safe }}
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Content -->
+        <section id="content" class="main">
+            <span class="image main"><img src="/content/images/pic04.jpg" alt="" /></span>
+            {{ editable_area('generic-text') | safe }} 
+        </section>
+
+    </div>
+{% endblock %}	
