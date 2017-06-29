@@ -6,6 +6,7 @@
 @import 'cards.scss';
 @import 'typography.scss';
 @import 'tables.scss';
+@import 'animate.css';
 
 
 .paste-styled {
@@ -57,12 +58,20 @@
         min-width: 100%;
     }
 
+    .maximize-height {
+        min-height: 100%;
+    }
+
     .centered-content {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+    }
+
+    .centered-text {
+        text-align: center;
     }
 }
 

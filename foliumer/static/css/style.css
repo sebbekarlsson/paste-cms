@@ -1,3 +1,4 @@
+@import url(animate.css);
 .paste-styled .spinner {
   width: 40px;
   height: 40px;
@@ -44,13 +45,45 @@
           padding-left: 0.5rem;
           color: black;
           text-decoration: none;
-          font-family: 'Source Sans Pro', sans-serif; }
+          font-family: 'Roboto', sans-serif;
+          -webkit-font-smoothing: antialiased;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
           .paste-styled .control-panel .control-panel-menu ul li a .material-icons {
             vertical-align: middle;
             color: black;
             margin-right: 0.5rem; }
   .paste-styled .control-panel .control-panel-pane {
     flex: 1; }
+.paste-styled .split-h {
+  display: flex;
+  flex-direction: column; }
+.paste-styled .step-by-step {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  .paste-styled .step-by-step .step-by-step-step {
+    width: 640px;
+    min-height: 300px;
+    border-radius: 8px;
+    border-color: lightgray;
+    border-width: 1px;
+    border-style: solid;
+    height: 100%; }
+    .paste-styled .step-by-step .step-by-step-step[data-active='0'] {
+      opacity: 0;
+      display: none; }
+    .paste-styled .step-by-step .step-by-step-step .default-content {
+      height: 100%;
+      flex: 1; }
+    .paste-styled .step-by-step .step-by-step-step .step-by-step-stepper {
+      width: 100%;
+      height: 92px;
+      line-height: 92px;
+      text-align: center; }
 
 .paste-styled .drop-menu {
   background-color: black;
@@ -59,7 +92,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   z-index: 60; }
   .paste-styled .drop-menu ul {
     display: block !important;
@@ -111,6 +146,12 @@
   width: 100%;
   height: 100vh;
   overflow-y: hidden; }
+  .paste-styled .backdrop .backdrop-content {
+    z-index: 80;
+    color: white; }
+  .paste-styled .backdrop .card {
+    background-color: white;
+    color: black; }
   .paste-styled .backdrop[active="0"] {
     display: none;
     pointer-events: none; }
@@ -131,15 +172,32 @@
   padding-right: 0.5rem;
   min-width: 92px;
   display: inline-block;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: .2s; }
   .paste-styled .button:hover {
     cursor: pointer; }
+  .paste-styled .button.button-ok-small {
+    min-width: auto;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    color: #4cd964;
+    border-radius: 42px;
+    border-color: #4cd964;
+    border-width: 1px; }
+    .paste-styled .button.button-ok-small:hover {
+      background-color: #4cd964;
+      color: white;
+      transition: .2s; }
 .paste-styled .form {
   width: 100%; }
   .paste-styled .form .button, .paste-styled .form input, .paste-styled .form a, .paste-styled .form label, .paste-styled .form select {
     margin-top: 0.5rem; }
   .paste-styled .form label, .paste-styled .form input, .paste-styled .form p, .paste-styled .form a {
-    font-family: 'Source Sans Pro', sans-serif; }
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
   .paste-styled .form label {
     display: block; }
   .paste-styled .form input {
@@ -180,11 +238,19 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .paste-styled h1, .paste-styled h2, .paste-styled h3, .paste-styled h4, .paste-styled h5, .paste-styled h6, .paste-styled p, .paste-styled a {
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+.paste-styled h1, .paste-styled h2, .paste-styled h3, .paste-styled h4, .paste-styled h5, .paste-styled h6 {
+  font-weight: 300; }
+.paste-styled p, .paste-styled a {
+  font-weight: 200; }
 
 .paste-styled .table {
   text-align: left;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   width: 100%;
   border-collapse: collapse; }
   .paste-styled .table th, .paste-styled .table td {
@@ -232,12 +298,16 @@
   min-height: 100vh; }
 .paste-styled .full-width {
   min-width: 100%; }
+.paste-styled .maximize-height {
+  min-height: 100%; }
 .paste-styled .centered-content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center; }
+.paste-styled .centered-text {
+  text-align: center; }
 
 .admin-editable p {
   margin: 0px !important; }

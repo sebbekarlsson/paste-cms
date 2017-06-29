@@ -1,4 +1,6 @@
 @import 'mixins.scss';
+@import 'variables.scss';
+
 
 .paste-styled {
     .button {
@@ -18,9 +20,28 @@
         min-width: 92px;
         display: inline-block;
         text-decoration: none;
+        transition: .2s;
 
         &:hover {
             cursor: pointer;
+        }
+
+        &.button-ok-small {
+            min-width: auto;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            color: $color_ok;
+            border-radius: 42px;
+            border-color: $color_ok;
+            border-width: 1px;
+
+            &:hover {
+                background-color: $color_ok;
+                color: white;
+                transition: .2s;
+            }
         }
     }
 

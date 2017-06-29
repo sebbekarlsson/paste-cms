@@ -11,6 +11,10 @@ from  bson.objectid import ObjectId
 bp = Blueprint(__name__, __name__, template_folder='templates',
         url_prefix='/admin')
 
+@bp.route('/setup', methods=['POST', 'GET'])
+def show_setup():
+    return render_template('admin/setup.html')
+
 @bp.route('/')
 @login_required
 def show():

@@ -47,4 +47,47 @@
             flex: 1;
         }
     }
+
+    .split-h {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step-by-step {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .step-by-step-step {
+            width: 640px;
+            min-height: 300px;
+            border-radius: 8px;
+            border-color: lightgray;
+            border-width: 1px;
+            border-style: solid;
+            height: 100%;
+
+            &[data-active='0'] {
+                opacity: 0;
+                display: none;
+            }
+
+            .default-content {
+                height: 100%;
+                flex: 1;
+            }
+
+            .step-by-step-stepper {
+                width: 100%;
+                height: 92px;
+                line-height: 92px;
+                text-align: center;
+            }
+        }
+
+    }
 }

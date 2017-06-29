@@ -9,6 +9,16 @@
         height: 100vh;
         overflow-y: hidden;
 
+        .backdrop-content {
+            z-index: 80;
+            color: white;
+        }
+
+        .card {
+            background-color: white;
+            color: black;
+        }
+
         &[active="0"] {
             display: none;
             pointer-events: none;

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, send_from_directory
+from flask import Blueprint, render_template, send_from_directory, redirect
 from foliumer.config import config
 from foliumer.mongo import db
 from foliumer.models import Page
@@ -13,6 +13,9 @@ def show(page_route):
 
     if not page_route:
         page_route = ''
+
+    if page_route == 'INDEX':
+        return redirect('/')
 
     if page_route:
         page = db.collections.find_one({

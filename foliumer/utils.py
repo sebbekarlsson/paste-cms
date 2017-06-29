@@ -3,6 +3,17 @@ from foliumer.mongo import db
 from functools import wraps
 
 
+def is_installed():
+    option = db.collections.find_one({
+        'structure': '#Option',
+        'key': 'cms_installed'
+    })
+
+    if not option:
+        return False
+
+    return option['value']
+
 def get_current_user():
     if 'user_id' not in session:
         return None
@@ -21,12 +32,33 @@ def login_required(f):
     return decorated_function
 
 def editable_area(id=0, page_route=None):
+    _page_route = ''
+    html = ''
+
+    _page_route = 'INDEX'
+    
     if page_route:
-        page = db.collections.find_one({
-            'structure': '#Page',
-            'page_route': page_route
-        })
-        
+        _page_route = page_route
+    elif request.path and request.path != '':
+        _page_route = request.path
+
+    if '/' in _page_route:
+        _page_route = _page_route.split('/')[1]
+
+    if _page_route == '/' or _page_route == '':
+        _page_route = 'INDEX'
+
+    page = db.collections.find_one({
+        'structure': '#Page',
+        'page_route': _page_route
+    })
+
+    if not is_loggedin():
+        for editable in page['editables']:
+            if editable['editable_id'] == id:
+                return editable['text']
+
+    if page_route:
         if request.path != page_route and not (page_route == 'INDEX' and request.path == '/'):
             for editable in page['editables']:
                 if editable['editable_id'] == id:
@@ -37,5 +69,6 @@ def editable_area(id=0, page_route=None):
                     else:
                         return editable['text']
 
-    return """<div class='admin-editable' data-editable-type='text' data-editable-id='IDENTIFIER'>
-        </div>""".replace('IDENTIFIER', id)
+    else:
+        return """<div class='admin-editable' data-editable-type='text' data-editable-id='IDENTIFIER'>
+    </div>""".replace('IDENTIFIER', id)

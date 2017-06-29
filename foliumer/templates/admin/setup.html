@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+
+{% block head %}
+    {{ super() }}
+    
+    <script type='text/javascript'
+    src='{{ url_for('static', filename='js/setup.js') }}'></script>
+{% endblock %}
+
+{% block content %}
+    <div class='paste-styled'>
+        <div class='step-by-step' id='setup'>
+
+            <!-- 1 -->
+            <div class='step-by-step-step split-h animated fadeIn' data-step='0' data-active='1'>
+                <div class='default-content push-down centered-content maximize-height'>
+                    <h3>Hi!</h3>
+                    <p>Welcome to paste-cms.</p>
+                </div>
+                <div class='step-by-step-stepper'>
+                    <button class='button button-ok-small material-icons animated pulse infinite' id='step-next'>arrow_right</button>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class='step-by-step-step split-h' data-step='0' data-active='0'>
+                <div class='default-content push-down centered-content maximize-height'>
+                    <h3>Setup</h3>
+                    <p>
+                    Follow this guide, and we will get your website ready
+                    for you,<br>
+                    together.
+                    </p>
+                </div>
+                <div class='step-by-step-stepper'>
+                    <button class='button button-ok-small material-icons animated pulse infinite' id='step-next'>arrow_right</button>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class='step-by-step-step split-h' data-step='0' data-active='0' data-name='admin_form'>
+                <div class='default-content push-down centered-content maximize-height'>
+                    <h3>Administration</h3>
+                    <p>
+                    Tell us who will administrate this website.
+                    </p>
+                </div>
+                <div class='default-content'>
+                    <div class='form'>
+                        <label for='admin_username'>
+                            Username
+                            <input type='text' name='admin_username' id='admin_username' placeholder='john.doe12'/>
+                        </label>
+                        <label for='admin_password'>
+                            Password
+                            <input type='password' name='admin_password' id='admin_password' placeholder='******'/>
+                        </label>
+                        <label for='admin_password_confirm'>
+                            Confirm password 
+                            <input type='password' name='admin_password_confirm' id='admin_password_confirm' placeholder='******'/>
+                        </label>
+                    </div>
+                </div>
+                <div class='step-by-step-stepper'>
+                    <button class='button button-ok-small material-icons animated pulse infinite' id='step-next'>arrow_right</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
