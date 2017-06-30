@@ -224,7 +224,8 @@
     border-bottom-color: lightgray;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    font-size: 100%; }
+    font-size: 100%;
+    font-weight: 300; }
   .paste-styled .form select {
     display: inline-block;
     height: 32px;
