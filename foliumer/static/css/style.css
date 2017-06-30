@@ -197,7 +197,8 @@
       color: white; }
   .paste-styled .button.button-small-primary {
     border-color: #5856d6;
-    border-color: #5856d6; }
+    border-color: #5856d6;
+    color: #5856d6; }
     .paste-styled .button.button-small-primary:hover {
       background-color: #5856d6;
       color: white; }
