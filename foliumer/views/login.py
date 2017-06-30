@@ -39,7 +39,6 @@ def show():
     return render_template('admin/login.html', errors=errors)
 
 @bp.route('/logout', methods=['POST', 'GET'])
-@installed_required
 def show_logout():
     session['user_id'] = None
     del session['user_id']
