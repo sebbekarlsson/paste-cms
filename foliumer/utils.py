@@ -23,6 +23,14 @@ def get_current_user():
 def is_loggedin():
     return get_current_user() is not None
 
+def installed_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not is_installed():
+            return redirect('/admin/setup')
+        return f(*args, **kwargs)
+    return decorated_function
+
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):

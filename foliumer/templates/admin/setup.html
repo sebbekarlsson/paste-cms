@@ -3,28 +3,28 @@
 
 {% block head %}
     {{ super() }}
-    
+
     <script type='text/javascript'
-    src='{{ url_for('static', filename='js/setup.js') }}'></script>
+src='{{ url_for('static', filename='js/setup.js') }}'></script>
 {% endblock %}
 
 {% block content %}
     <div class='paste-styled'>
         <div class='step-by-step' id='setup'>
 
-            <!-- 1 -->
-            <div class='step-by-step-step split-h animated fadeIn' data-step='0' data-active='1'>
+            <!-- 0 -->
+            <div class='step-by-step-step split-h'>
                 <div class='default-content push-down centered-content maximize-height'>
                     <h3>Hi!</h3>
                     <p>Welcome to paste-cms.</p>
                 </div>
                 <div class='step-by-step-stepper'>
-                    <button class='button button-ok-small material-icons animated pulse infinite' id='step-next'>arrow_right</button>
+                    <button class='button button-small button-small-primary material-icons animated pulse infinite' data-type='next'>arrow_right</button>
                 </div>
             </div>
 
-            <!-- 2 -->
-            <div class='step-by-step-step split-h' data-step='0' data-active='0'>
+            <!-- 1 -->
+            <div class='step-by-step-step split-h'>
                 <div class='default-content push-down centered-content maximize-height'>
                     <h3>Setup</h3>
                     <p>
@@ -34,12 +34,13 @@
                     </p>
                 </div>
                 <div class='step-by-step-stepper'>
-                    <button class='button button-ok-small material-icons animated pulse infinite' id='step-next'>arrow_right</button>
+                    <button class='button button-small button-small material-icons' data-type='prev'>arrow_left</button>
+                    <button class='button button-small button-small-primary material-icons animated pulse infinite' data-type='next'>arrow_right</button>
                 </div>
             </div>
 
-            <!-- 3 -->
-            <div class='step-by-step-step split-h' data-step='0' data-active='0' data-name='admin_form'>
+            <!-- 2 -->
+            <div class='step-by-step-step split-h' data-name='admin_form'>
                 <div class='default-content push-down centered-content maximize-height'>
                     <h3>Administration</h3>
                     <p>
@@ -63,9 +64,61 @@
                     </div>
                 </div>
                 <div class='step-by-step-stepper'>
-                    <button class='button button-ok-small material-icons animated pulse infinite' id='step-next'>arrow_right</button>
+                    <button class='button button-small button-small material-icons' data-type='prev'>arrow_left</button>
+                    <button class='button button-small button-small-primary material-icons animated pulse infinite' data-type='next'>arrow_right</button>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class='step-by-step-step split-h'>
+                <div class='default-content push-down centered-content maximize-height'>
+                    <h3>Complete</h3>
+                    <p>
+                    You are done with the installation.<br>
+                    Tap the `next` button to proceed or go `back` if you
+                    need to change anything.
+                    </p>
+                </div>
+                <div class='step-by-step-stepper'>
+                    <button class='button button-small button-small material-icons' data-type='prev'>arrow_left</button>
+                    <button class='button button-small button-small-primary material-icons animated pulse infinite' data-type='next'>arrow_right</button>
                 </div>
             </div>
         </div>
     </div>
+    <script type='text/javascript'>
+        document.addEventListener('DOMContentLoaded', function(e) {
+            window.setup = new Setup(document.getElementById('setup'));
+
+            setup.next_step_action = function(step) {
+                var errors = [];
+
+                if (step.getAttribute('data-name') == 'admin_form') {
+                    setup.db['admin'] = {};
+
+                    var username = step.querySelector('#admin_username');
+                    var password = step.querySelector('#admin_password');
+                    var password_confirm = step.querySelector('#admin_password_confirm');
+
+                    if (password.value != password_confirm.value)
+                        errors.push('Passwords does not match.');
+
+                    setup.db['admin']['username'] = username.value;
+                    setup.db['admin']['password'] = password.value;
+                }
+
+                return errors;
+            };
+
+            setup.handle_error = function(error) {
+                backdrop_error(error);
+            };
+
+            setup.handle_finish = function(step) {
+                backdrop_msg('Done!');
+            };
+        
+            setup.start();
+        });
+    </script>
 {% endblock %}

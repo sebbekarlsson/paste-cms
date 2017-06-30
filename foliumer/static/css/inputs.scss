@@ -24,23 +24,33 @@
 
         &:hover {
             cursor: pointer;
+            transition: .2s;
         }
 
-        &.button-ok-small {
+        &.button-small {
             min-width: auto;
             width: 42px;
             height: 42px;
             line-height: 42px;
             text-align: center;
-            color: $color_ok;
+            color: black;
             border-radius: 42px;
-            border-color: $color_ok;
+            border-color: black;
             border-width: 1px;
 
             &:hover {
-                background-color: $color_ok;
+                background-color: black;
                 color: white;
-                transition: .2s;
+            }
+        }
+
+        &.button-small-primary {
+            border-color: $color_primary;
+            border-color: $color_primary;
+
+            &:hover {
+                background-color: $color_primary;
+                color: white;
             }
         }
     }

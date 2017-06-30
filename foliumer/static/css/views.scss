@@ -1,4 +1,5 @@
 @import 'mixins.scss';
+@import 'variables.scss';
 
 
 .paste-styled {
@@ -81,11 +82,20 @@
                 flex: 1;
             }
 
+            label, h1, h2, h3, h4, h5, h6 {
+                color: $color_primary;
+            }
+
             .step-by-step-stepper {
                 width: 100%;
                 height: 92px;
                 line-height: 92px;
                 text-align: center;
+
+                button {
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                }
             }
         }
 

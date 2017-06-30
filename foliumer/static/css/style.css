@@ -79,11 +79,16 @@
     .paste-styled .step-by-step .step-by-step-step .default-content {
       height: 100%;
       flex: 1; }
+    .paste-styled .step-by-step .step-by-step-step label, .paste-styled .step-by-step .step-by-step-step h1, .paste-styled .step-by-step .step-by-step-step h2, .paste-styled .step-by-step .step-by-step-step h3, .paste-styled .step-by-step .step-by-step-step h4, .paste-styled .step-by-step .step-by-step-step h5, .paste-styled .step-by-step .step-by-step-step h6 {
+      color: #5856d6; }
     .paste-styled .step-by-step .step-by-step-step .step-by-step-stepper {
       width: 100%;
       height: 92px;
       line-height: 92px;
       text-align: center; }
+      .paste-styled .step-by-step .step-by-step-step .step-by-step-stepper button {
+        margin-left: 1rem;
+        margin-right: 1rem; }
 
 .paste-styled .drop-menu {
   background-color: black;
@@ -175,21 +180,27 @@
   text-decoration: none;
   transition: .2s; }
   .paste-styled .button:hover {
-    cursor: pointer; }
-  .paste-styled .button.button-ok-small {
+    cursor: pointer;
+    transition: .2s; }
+  .paste-styled .button.button-small {
     min-width: auto;
     width: 42px;
     height: 42px;
     line-height: 42px;
     text-align: center;
-    color: #4cd964;
+    color: black;
     border-radius: 42px;
-    border-color: #4cd964;
+    border-color: black;
     border-width: 1px; }
-    .paste-styled .button.button-ok-small:hover {
-      background-color: #4cd964;
-      color: white;
-      transition: .2s; }
+    .paste-styled .button.button-small:hover {
+      background-color: black;
+      color: white; }
+  .paste-styled .button.button-small-primary {
+    border-color: #5856d6;
+    border-color: #5856d6; }
+    .paste-styled .button.button-small-primary:hover {
+      background-color: #5856d6;
+      color: white; }
 .paste-styled .form {
   width: 100%; }
   .paste-styled .form .button, .paste-styled .form input, .paste-styled .form a, .paste-styled .form label, .paste-styled .form select {

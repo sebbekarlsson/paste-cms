@@ -82,6 +82,30 @@ function backdrop_error(message) {
     }
 }
 
+function backdrop_msg(message) {
+    var backdrop = document.getElementById('backdrop');
+    
+    toggle_backdrop();
+
+    if (backdrop_is_active()) {
+        backdrop.setAttribute('style', [
+            'display: flex;',
+            'justify-content: center;',
+            'align-items: center;'
+        ].join(''));
+
+        backdrop.innerHTML = [
+            '<div class="card backdrop-content">',
+            '<p>' + message + '</p>',
+            '</div>'
+        ].join('');
+
+        backdrop.querySelector('div').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function(e) {
     var backdrop = document.getElementById('backdrop');
 

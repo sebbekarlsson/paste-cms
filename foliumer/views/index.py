@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, send_from_directory, redirect
+from foliumer.utils import installed_required 
 from foliumer.config import config
 from foliumer.mongo import db
 from foliumer.models import Page
@@ -8,6 +9,7 @@ bp = Blueprint(__name__, __name__, template_folder=config['templates_dir'])
 
 @bp.route('/', defaults={'page_route': None})
 @bp.route('/<page_route>')
+@installed_required
 def show(page_route):
     page = None
 
