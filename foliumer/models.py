@@ -52,3 +52,15 @@ class Option(DBObject):
         DBObject.__init__(self, *args, **kwargs)
         self.key = key
         self.value = value
+
+class User(DBObject):
+    def __init__(
+            self,
+            username=None,
+            password=None,
+            *args,
+            **kwargs
+            ):
+        DBObject.__init__(self, *args, **kwargs)
+        self.username = username
+        self.password = password

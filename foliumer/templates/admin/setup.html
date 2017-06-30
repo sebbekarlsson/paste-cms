@@ -120,10 +120,7 @@ src='{{ url_for('static', filename='js/setup.js') }}'></script>
             };
 
             setup.handle_finish = function(step) {
-                //wpost('/api/install', JSON.stringify(setup.db), function(data) {
-                //    console.log(data);
-                //});
-                backdrop_msg('Done!');
+                window.location.href = '/login';
             };
         
             setup.start();

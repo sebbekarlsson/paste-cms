@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify
 import json
 from foliumer.mongo import db
+from foliumer.models import User, Option
 from foliumer.utils import is_installed
 
 
@@ -47,6 +48,12 @@ def show():
 
         if admin['password'] != admin['password_confirm']:
             return jsonify({'error': 'Passwords does not match!'}), 400
+
+        user = User(username=admin['username'], password=admin['password'])
+        option = Option(key='cms_installed', value=True)
+
+        db.collections.insert_one(user.export())
+        db.collections.insert_one(option.export())
 
         return jsonify({'message': 'All good'}), 200
 

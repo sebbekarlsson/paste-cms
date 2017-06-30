@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, session, redirect
 from foliumer.config import config
 from foliumer.utils import is_loggedin, installed_required
+from foliumer.mongo import db
 
 
 bp = Blueprint(__name__, __name__, template_folder='templates')
@@ -14,14 +15,23 @@ def show():
         login_username = request.form.get('login_username')
         login_password = request.form.get('login_password')
 
-        if login_username != config['admin']['username']:
-            errors.append('Wrong credentials')
+        existing_user = db.collections.find_one({
+            'structure': '#User',
+            'username': login_username
+        })
 
-        if login_password != config['admin']['password']:
-            errors.append('Wrong credentials')
+        if not existing_user:
+            errors.append('No such user')
 
         if len(errors) == 0:
-            session['user_id'] = 'admin'
+            if login_username != existing_user['username']:
+                errors.append('Wrong credentials')
+
+            if login_password != existing_user['password']:
+                errors.append('Wrong credentials')
+
+        if len(errors) == 0:
+            session['user_id'] = existing_user['username']
 
     if is_loggedin():
         return redirect('/admin')
