@@ -91,8 +91,6 @@ src='{{ url_for('static', filename='js/setup.js') }}'></script>
             window.setup = new Setup(document.getElementById('setup'));
 
             setup.next_step_action = function(step) {
-                var errors = [];
-
                 if (step.getAttribute('data-name') == 'admin_form') {
                     setup.db['admin'] = {};
 
@@ -100,14 +98,21 @@ src='{{ url_for('static', filename='js/setup.js') }}'></script>
                     var password = step.querySelector('#admin_password');
                     var password_confirm = step.querySelector('#admin_password_confirm');
 
-                    if (password.value != password_confirm.value)
-                        errors.push('Passwords does not match.');
-
                     setup.db['admin']['username'] = username.value;
                     setup.db['admin']['password'] = password.value;
+                    setup.db['admin']['password_confirm'] = password_confirm.value;
+
+                    wpost('/api/install', JSON.stringify(setup.db), function(data) {
+                        data = JSON.parse(data);
+
+                        if ('error' in data) {
+                            setup.previous_step();
+                            setup.handle_error(data['error']);
+                        }
+                    })
                 }
 
-                return errors;
+                return []; // ugly hack
             };
 
             setup.handle_error = function(error) {
@@ -115,6 +120,9 @@ src='{{ url_for('static', filename='js/setup.js') }}'></script>
             };
 
             setup.handle_finish = function(step) {
+                //wpost('/api/install', JSON.stringify(setup.db), function(data) {
+                //    console.log(data);
+                //});
                 backdrop_msg('Done!');
             };
         
