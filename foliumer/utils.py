@@ -61,6 +61,13 @@ def editable_area(id=0, page_route=None):
         'page_route': _page_route
     })
 
+    if not page:
+        page = {
+            'page_template': 'index.html',
+            'route': 'INDEX',
+            'editables': []
+        }
+
     if not is_loggedin():
         for editable in page['editables']:
             if editable['editable_id'] == id:

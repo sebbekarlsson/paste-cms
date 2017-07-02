@@ -47,7 +47,8 @@
           text-decoration: none;
           font-family: 'Roboto', sans-serif;
           -webkit-font-smoothing: antialiased;
-          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+          font-weight: 300; }
           .paste-styled .control-panel .control-panel-menu ul li a .material-icons {
             vertical-align: middle;
             color: black;
@@ -119,7 +120,8 @@
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         text-decoration: none;
-        border-bottom: none !important; }
+        border-bottom: none !important;
+        font-weight: 300; }
         .paste-styled .drop-menu ul li a:hover {
           cursor: pointer; }
         .paste-styled .drop-menu ul li a .material-icons {
@@ -167,21 +169,45 @@
   background: none;
   border: none;
   outline: none;
-  border-style: solid;
+  border-color: transparent;
   border-width: 1px;
-  border-color: black;
+  border-style: solid;
+  border-radius: 16px;
   color: black;
   font-weight: 200;
   text-align: center;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
   min-width: 92px;
   display: inline-block;
   text-decoration: none;
-  transition: .2s; }
+  transition: .2s;
+  background-color: lightgray;
+  font-weight: 300; }
   .paste-styled .button:hover {
     cursor: pointer;
     transition: .2s; }
+  .paste-styled .button.button-warning {
+    background-color: #ff3b30;
+    color: white; }
+    .paste-styled .button.button-warning:hover {
+      border-color: black;
+      color: black;
+      background-color: transparent; }
+  .paste-styled .button.button-ok {
+    background-color: #4cd964;
+    color: white; }
+    .paste-styled .button.button-ok:hover {
+      border-color: black;
+      color: black;
+      background-color: transparent; }
+  .paste-styled .button.button-primary {
+    background-color: #5856d6;
+    color: white; }
+    .paste-styled .button.button-primary:hover {
+      border-color: black;
+      color: black;
+      background-color: transparent; }
   .paste-styled .button.button-small {
     min-width: auto;
     width: 42px;
@@ -191,7 +217,10 @@
     color: black;
     border-radius: 42px;
     border-color: black;
-    border-width: 1px; }
+    border-width: 1px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: transparent; }
     .paste-styled .button.button-small:hover {
       background-color: black;
       color: white; }

@@ -9,22 +9,58 @@
         background: none;
         border: none;
         outline: none;
-        border-style: solid;
+        border-color: transparent;
         border-width: 1px;
-        border-color: black;
+        border-style: solid;
+        border-radius: 16px;
         color: black;
         font-weight: 200;
         text-align: center;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
         min-width: 92px;
         display: inline-block;
         text-decoration: none;
         transition: .2s;
+        background-color: lightgray;
+        font-weight: 300;
 
         &:hover {
             cursor: pointer;
             transition: .2s;
+        }
+
+        &.button-warning {
+            background-color: $color_warning;
+            color: white;
+
+            &:hover {
+                border-color: black;
+                color: black;
+                background-color: transparent; 
+            }
+        }
+
+        &.button-ok {
+            background-color: $color_ok;
+            color: white;
+
+            &:hover {
+                border-color: black;
+                color: black;
+                background-color: transparent; 
+            }
+        }
+
+        &.button-primary {
+            background-color: $color_primary;
+            color: white;
+
+            &:hover {
+                border-color: black;
+                color: black;
+                background-color: transparent; 
+            }
         }
 
         &.button-small {
@@ -37,6 +73,9 @@
             border-radius: 42px;
             border-color: black;
             border-width: 1px;
+            padding-left: 0px;
+            padding-right: 0px;
+            background-color: transparent;
 
             &:hover {
                 background-color: black;

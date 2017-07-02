@@ -89,4 +89,6 @@ def show_settings():
         if request.form.get('delete_all_data'):
             db.collections.remove({})
 
+            return redirect('/admin/setup')
+
     return render_template('admin/settings.html')

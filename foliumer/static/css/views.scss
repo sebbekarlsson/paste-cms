@@ -32,6 +32,7 @@
                         color: black;
                         text-decoration: none;
                         @include set-font();
+                        font-weight: 300;
 
 
                         .material-icons {
