@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
                     window.page_route = 'INDEX';
 
                 setup_editables();
+                
             } else {
                 if (page_route.value != '') {
                     console.error("No `page_route` set for this page.");

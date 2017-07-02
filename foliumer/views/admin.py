@@ -5,7 +5,8 @@ from foliumer.config import config
 from foliumer.utils import login_required
 import glob
 import ntpath
-from  bson.objectid import ObjectId
+from bson.objectid import ObjectId
+import pymongo
 
 
 bp = Blueprint(__name__, __name__, template_folder='templates',
@@ -77,7 +78,7 @@ def show_pages():
     pages = list(
         db.collections.find({
             'structure': '#Page'
-        })
+        }).sort('created', pymongo.DESCENDING)
     )
 
     return render_template('admin/pages.html', pages=pages)
