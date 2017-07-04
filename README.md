@@ -18,11 +18,11 @@
 
         gem install sass
 
-* 2:
+* 2: execute
 
         python setup.py develop
 
-* 3:
+* 3: execute
 
         foliumer-develop
 
