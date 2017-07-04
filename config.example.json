@@ -1,9 +1,4 @@
 {
     "templates_dir": "/home/ianertson/workspace/foliumer/example-project",
-    "database": "foliumer",
-     "admin": {
-        "username": "administrator",
-        "password": "thepassword",
-        "email": "your.email@your.company.com"
-     }
+    "database": "foliumer"
 }
