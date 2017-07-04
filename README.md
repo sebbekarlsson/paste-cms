@@ -1,6 +1,9 @@
 # PASTE-CMS
 > A simple copy-paste, edit-text-only cms.
 
+> All this CMS provides is route / page management and a wysiwyg editor
+> for editable areas created by the template developer.
+
 ## Development steps of a simple paste-site
 * [Theme developer creates templates](screenshots/develop_template.png)
 * [Theme developer creates editable areas for the site admin, inside the templates.](screenshots/develop_template.png)
