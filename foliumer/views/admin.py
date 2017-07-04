@@ -108,6 +108,9 @@ def show_theme_db():
     theme_db = get_theme_db()
 
     if request.method == 'POST':
+        if request.form.get('empty_db'):
+            db.collections.remove({'structure': '#ThemeDBOption'})
+
         if request.form.get('save_db'):
             for k in request.form.keys():
                 for v in request.form.getlist(k):
