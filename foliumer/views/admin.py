@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect
 from foliumer.mongo import db
 from foliumer.models import Page
 from foliumer.config import config
-from foliumer.utils import login_required
+from foliumer.utils import login_required, is_installed 
 import glob
 import ntpath
 from bson.objectid import ObjectId
@@ -14,6 +14,9 @@ bp = Blueprint(__name__, __name__, template_folder='templates',
 
 @bp.route('/setup', methods=['POST', 'GET'])
 def show_setup():
+    if is_installed():
+        return redirect('/admin')
+
     return render_template('admin/setup.html')
 
 @bp.route('/')

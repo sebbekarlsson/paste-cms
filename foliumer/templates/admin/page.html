@@ -26,7 +26,9 @@
             </select>
         </label>
         <div class='push-down'>
-            <a href='/{{ page.page_route }}' class='button button-primary'>Edit on site</a>
+            {% if page %}
+                <a href='/{{ page.page_route }}' class='button button-primary'>Edit on site</a>
+            {% endif %}
             <input class='button button-ok' type='submit' name='page_create' value='Save'/>
         </div>
     </form>
