@@ -23,7 +23,8 @@ def show_setup():
 @bp.route('/')
 @login_required
 def show():
-    return render_template('admin/index.html')
+    active_theme = ntpath.basename(config['templates_dir'])
+    return render_template('admin/index.html', active_theme=active_theme)
 
 @bp.route('/page/<page_id>', methods=['POST', 'GET'])
 @login_required
