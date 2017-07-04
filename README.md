@@ -2,10 +2,10 @@
 > A simple copy-paste, edit-text-only cms.
 
 ## Development steps of a simple paste-site
-* Theme developer creates templates
-* Theme developer creates editable areas for the site admin, inside the templates.
-* Site admin creates routes / pages and selects which template these pages should use.
-* Site admin can whenever she wants edit the editable areas using the wysiwyg editor.
+* [Theme developer creates templates](screenshots/develop_template.png)
+* [Theme developer creates editable areas for the site admin, inside the templates.](screenshots/develop_template.png)
+* [Site admin creates routes / pages and selects which template these pages should use.](screenshots/admin_routes.png)
+* [Site admin can whenever she wants edit the editable areas using the wysiwyg editor.](screenshots/w.png)
 
 ## Running the CMS as a developer
 * 0:
