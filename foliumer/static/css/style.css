@@ -258,6 +258,12 @@
     .paste-styled .button.button-small-primary:hover {
       background-color: #5856d6;
       color: white; }
+  .paste-styled .button[disabled] {
+    background-color: lightgray; }
+    .paste-styled .button[disabled]:hover {
+      background-color: lightgray;
+      cursor: default;
+      color: white; }
 .paste-styled .form {
   width: 100%; }
   .paste-styled .form .button, .paste-styled .form input, .paste-styled .form a, .paste-styled .form label, .paste-styled .form select {
@@ -305,6 +311,13 @@
   padding: 0.5rem;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+.paste-styled .simple-card {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid; }
 
 .paste-styled h1, .paste-styled h2, .paste-styled h3, .paste-styled h4, .paste-styled h5, .paste-styled h6, .paste-styled p, .paste-styled a {
   font-family: 'Roboto', sans-serif;
@@ -347,6 +360,9 @@
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
+.paste-styled .squeezed-content {
+  box-sizing: border-box;
+  padding: 0.5rem; }
 .paste-styled .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

@@ -93,6 +93,16 @@
                 color: white;
             }
         }
+
+        &[disabled] {
+            background-color: lightgray;
+
+            &:hover {
+                background-color: lightgray;
+                cursor: default;
+                color: white;
+            }
+        }
     }
 
     .form {

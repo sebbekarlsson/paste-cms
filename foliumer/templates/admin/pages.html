@@ -21,7 +21,11 @@
                     <td>
                         <form method='POST'>
                             <input type='hidden' name='page_id' value='{{ page._id }}'/>
-                            <input type='submit' name='delete' value='delete_forever' class='button button-warning material-icons'/>
+                            <input
+                            {% if page.page_route == 'INDEX' %}
+                                disabled
+                            {% endif %}
+                            type='submit' name='delete' value='delete_forever' class='button button-warning material-icons'/>
                         </form>
                     </td>
                 </tr>

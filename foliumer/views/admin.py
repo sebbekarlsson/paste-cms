@@ -75,10 +75,17 @@ def show_pages():
     if request.method == 'POST':
         if request.form.get('delete'):
             if request.form.get('page_id'):
-                db.collections.remove({
+                existing = db.collections.find_one({
                     'structure': '#Page',
                     '_id': ObjectId(request.form.get('page_id'))
                 })
+
+                if existing:
+                    if existing['page_route'] != 'INDEX':
+                        db.collections.remove({
+                            'structure': '#Page',
+                            '_id': ObjectId(request.form.get('page_id'))
+                        })
 
     pages = list(
         db.collections.find({

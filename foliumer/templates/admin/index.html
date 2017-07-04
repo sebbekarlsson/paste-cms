@@ -3,23 +3,23 @@
 
 {% block pane %}
     <div class='dashboard'>
-        <div class='dashboard-item card'>
+        <div class='dashboard-item simple-card'>
             <i class='material-icons'>person</i>
             <p>Current user: <b>{{ get_current_user().username }}</b></p>
         </div>
-        <div class='dashboard-item card'>
+        <div class='dashboard-item simple-card'>
             <i class='material-icons'>color_lens</i>
             <p>Active theme: <b>{{ active_theme }}</b></p>
         </div>
-        <div class='dashboard-item card'>
+        <div class='dashboard-item simple-card'>
             <i class='material-icons'>sd_storage</i>
             <p>Database: <b>{{ config['database'] }}</b></p>
         </div>
-        <div class='dashboard-item card'>
+        <div class='dashboard-item simple-card'>
             <i class='material-icons'>note</i>
             <p>Number of pages: <b>{{ mongo.collections.find({'structure': '#Page'}).count() }}</b></p>
         </div>
-        <div class='dashboard-item card'>
+        <div class='dashboard-item simple-card'>
             <i class='material-icons'>people_outline</i>
             <p>Number of users: <b>{{ mongo.collections.find({'structure': '#User'}).count() }}</b></p>
         </div>
