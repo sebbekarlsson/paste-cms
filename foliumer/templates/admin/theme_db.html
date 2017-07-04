@@ -1,0 +1,16 @@
+{% extends 'admin/admin_layout.html' %}
+
+
+{% block pane %}
+    <h2>Theme Database</h2>
+    <form method='POST' class='form'>
+        {% for k, v in db.items()  %}
+            <label for='db_{{ k }}'>
+                {{ k | title }}
+                <input type='text' name='db_{{ k }}' type='text' value='{{ v }}' id='db_{{ k }}'/>
+            </label>
+        {% endfor %}
+        <input type='submit' name='save_db' class='button button-ok' id='save_db' value='Save'/>
+        <input type='submit' name='empty_db' class='button button-warning' id='empty_db' value='Purge Theme DB'/>
+    </form>
+{% endblock %}

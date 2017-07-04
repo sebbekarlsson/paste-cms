@@ -3,6 +3,8 @@ from foliumer.utils import installed_required
 from foliumer.config import config
 from foliumer.mongo import db
 from foliumer.models import Page
+from foliumer.utils import get_theme_db
+import json
 
 
 bp = Blueprint(__name__, __name__, template_folder=config['templates_dir'])
@@ -11,8 +13,11 @@ bp = Blueprint(__name__, __name__, template_folder=config['templates_dir'])
 @bp.route('/<page_route>')
 @installed_required
 def show(page_route):
+    theme_db = {}
     page = None
 
+    theme_db = get_theme_db()
+    
     if not page_route:
         page_route = ''
 
@@ -34,7 +39,7 @@ def show(page_route):
             'editables': []
         }
 
-    return render_template(page['page_template'], page=page)
+    return render_template(page['page_template'], page=page, db=theme_db)
 
 
 @bp.route('/content', defaults={'filename': None})

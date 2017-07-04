@@ -1,12 +1,13 @@
 from flask import Blueprint, render_template, request, redirect
 from foliumer.mongo import db
-from foliumer.models import Page
+from foliumer.models import Page, ThemeDBOption
 from foliumer.config import config
-from foliumer.utils import login_required, is_installed 
+from foliumer.utils import login_required, is_installed, get_theme_db
 import glob
 import ntpath
 from bson.objectid import ObjectId
 import pymongo
+import json
 
 
 bp = Blueprint(__name__, __name__, template_folder='templates',
@@ -96,3 +97,47 @@ def show_settings():
             return redirect('/admin/setup')
 
     return render_template('admin/settings.html')
+
+@bp.route('/theme-db', methods=['POST', 'GET'])
+@login_required
+def show_theme_db():
+    if request.method == 'POST':
+        if request.form.get('empty_db'):
+            db.collections.remove({'structure': '#ThemeDBOption'})
+
+    theme_db = get_theme_db()
+
+    if request.method == 'POST':
+        if request.form.get('save_db'):
+            for k in request.form.keys():
+                for v in request.form.getlist(k):
+                    if 'db_' not in k:
+                        continue
+
+                    c_k = k.split('db_')[1]
+
+                    existing = db.collections.find_one({
+                        'structure': '#ThemeDBOption',
+                        'key': c_k
+                    })
+
+                    if not existing:
+                        tdbo = ThemeDBOption(
+                            key=c_k,
+                            value=v
+                        )
+
+                        db.collections.insert_one(tdbo.export())
+                    else:
+                        db.collections.update_one({
+                            'structure': '#ThemeDBOption',
+                            'key': c_k
+                        },
+                        {
+                            '$set': {'value' : v}
+                        }
+                        )
+        
+        theme_db = get_theme_db()
+
+    return render_template('admin/theme_db.html', db=theme_db)

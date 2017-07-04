@@ -53,6 +53,18 @@ class Option(DBObject):
         self.key = key
         self.value = value
 
+class ThemeDBOption(DBObject):
+    def __init__(
+            self,
+            key=None,
+            value=None,
+            *args,
+            **kwargs
+            ):
+        DBObject.__init__(self, *args, **kwargs)
+        self.key = key
+        self.value = value
+
 class User(DBObject):
     def __init__(
             self,
