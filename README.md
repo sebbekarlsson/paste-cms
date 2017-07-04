@@ -28,3 +28,10 @@
 
 * 4:
 > The CMS should be up and running at `http://localhost:5000`
+
+* NOTE:
+> When killing the develop-process (`foliumer-develop`), make sure you also run:
+
+        pkill -f sass
+
+> To kill the sass process as well.
