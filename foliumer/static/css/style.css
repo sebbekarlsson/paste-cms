@@ -100,6 +100,23 @@
       .paste-styled .step-by-step .step-by-step-step .step-by-step-stepper button {
         margin-left: 1rem;
         margin-right: 1rem; }
+.paste-styled .dashboard {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  .paste-styled .dashboard .dashboard-item {
+    width: auto;
+    min-height: 200px;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap; }
+    .paste-styled .dashboard .dashboard-item .material-icons {
+      width: 100%;
+      text-align: center;
+      font-size: 4rem; }
 
 .paste-styled .drop-menu {
   background-color: black;

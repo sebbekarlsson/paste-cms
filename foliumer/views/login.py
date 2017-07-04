@@ -31,7 +31,7 @@ def show():
                 errors.append('Wrong credentials')
 
         if len(errors) == 0:
-            session['user_id'] = existing_user['username']
+            session['user_id'] = str(existing_user['_id'])
 
     if is_loggedin():
         return redirect('/admin')

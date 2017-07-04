@@ -115,4 +115,27 @@
         }
 
     }
+
+    .dashboard {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        
+        .dashboard-item {
+            width: auto; 
+            min-height: 200px;
+            margin: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+
+            .material-icons {
+                width: 100%;
+                text-align: center;
+                font-size: 4rem;
+            }
+        }
+    }
 }
