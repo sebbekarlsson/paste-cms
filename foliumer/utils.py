@@ -84,6 +84,5 @@ def editable_area(id=0, page_route=None):
                     else:
                         return editable['text']
 
-    else:
-        return """<div class='admin-editable' data-editable-type='text' data-editable-id='IDENTIFIER'>
-    </div>""".replace('IDENTIFIER', id)
+    return """<div class='admin-editable' data-editable-type='text' data-editable-id='IDENTIFIER'>
+</div>""".replace('IDENTIFIER', id)
