@@ -56,11 +56,11 @@
                 <h2>Etiam feugiat</h2>
                 <dl class="alt">
                     <dt>Address</dt>
-                    <dd>{{ editable_area('footer-address', page_route='INDEX') | safe }}</dd>
+                    <dd>{{ db['footer-address'] }}</dd>
                     <dt>Phone</dt>
-                    <dd>{{ editable_area('footer-phone', page_route='INDEX') | safe }}</dd>
+                    <dd>{{ db['footer-phone'] }}</dd>
                     <dt>Email</dt>
-                    <dd><a href="#">{{ editable_area('footer-email', page_route='INDEX') | safe }}</a></dd>
+                    <dd><a href="#">{{ db['footer-email'] }}</a></dd>
                 </dl>
                 <ul class="icons">
                     <li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>

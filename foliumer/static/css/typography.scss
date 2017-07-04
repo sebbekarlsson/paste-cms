@@ -1,4 +1,5 @@
 @import 'mixins.scss';
+@import 'variables.scss';
 
 
 .paste-styled {
@@ -12,5 +13,17 @@
 
     p, a {
         font-weight: 200;
+    }
+
+    .text-warning {
+        color: $color_warning !important;
+    }
+
+    .text-ok {
+        color: $color_ok !important;
+    }
+
+    .text-primary {
+        color: $color_primary !important;
     }
 }

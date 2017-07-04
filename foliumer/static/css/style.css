@@ -48,11 +48,21 @@
           font-family: 'Roboto', sans-serif;
           -webkit-font-smoothing: antialiased;
           text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-          font-weight: 300; }
+          font-weight: 300;
+          transition: .2s;
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-bottom-color: transparent; }
           .paste-styled .control-panel .control-panel-menu ul li a .material-icons {
             vertical-align: middle;
             color: black;
             margin-right: 0.5rem; }
+          .paste-styled .control-panel .control-panel-menu ul li a:hover {
+            color: #5856d6;
+            transition: .2s;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: lightgray; }
   .paste-styled .control-panel .control-panel-pane {
     flex: 1; }
 .paste-styled .split-h {
@@ -287,6 +297,12 @@
   font-weight: 300; }
 .paste-styled p, .paste-styled a {
   font-weight: 200; }
+.paste-styled .text-warning {
+  color: #ff3b30 !important; }
+.paste-styled .text-ok {
+  color: #4cd964 !important; }
+.paste-styled .text-primary {
+  color: #5856d6 !important; }
 
 .paste-styled .table {
   text-align: left;
@@ -306,9 +322,10 @@
     border-bottom-color: lightgray;
     border-bottom-width: 1px; }
 
-.paste-styled * {
+* {
   margin: 0;
   padding: 0; }
+
 .paste-styled .default-content {
   box-sizing: border-box;
   padding-left: 0.5rem;

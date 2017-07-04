@@ -13,6 +13,7 @@
             border-right-color: lightgray;
             border-right-style: solid;
             border-right-width: 1px;
+            //background-color: black;
 
             ul {
                 display: block;
@@ -33,12 +34,25 @@
                         text-decoration: none;
                         @include set-font();
                         font-weight: 300;
+                        transition: .2s;
+                        border-bottom-width: 1px;
+                        border-bottom-style: solid;
+                        border-bottom-color: transparent;
 
 
                         .material-icons {
                             vertical-align: middle;
                             color: black;
                             margin-right: 0.5rem;
+                        }
+
+
+                        &:hover {
+                            color: $color_primary;
+                            transition: .2s;
+                            border-bottom-width: 1px;
+                            border-bottom-style: solid;
+                            border-bottom-color: lightgray;
                         }
                     }
                 }

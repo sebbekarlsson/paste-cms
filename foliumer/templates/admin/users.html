@@ -3,24 +3,22 @@
 
 {% block pane %}
     <div class='section'>
-        <a href='/admin/page/new' class='button button-primary'>New Page +</a>
+        <a href='/admin/user/new' class='button button-primary'>New User +</a>
     </div>
     <table class='table push-down'>
         <thead>
-            <th>Route</th>
-            <th>Template</th>
+            <th>Username</th>
             <th></th>
             <th></th>
         </thead>
         <tbody>
-            {% for page in pages %}
+            {% for user in users %}
                 <tr>
-                    <td>{{ page.page_route }}</td>
-                    <td>{{ page.page_template }}</td>
-                    <td><a class='button button-primary' href='/admin/page/{{ page._id }}'>Edit</a></td>
+                    <td>{{ user.username }}</td>
+                    <td><a class='button button-primary' href='/admin/user/{{ user._id }}'>Edit</a></td>
                     <td>
                         <form method='POST'>
-                            <input type='hidden' name='page_id' value='{{ page._id }}'/>
+                            <input type='hidden' name='user_id' value='{{ user._id }}'/>
                             <input type='submit' name='delete' value='delete_forever' class='button button-warning material-icons'/>
                         </form>
                     </td>
@@ -28,4 +26,4 @@
             {% endfor %}
         </tbody>
     </table>
-{% endblock %}
+{% endblock %}§

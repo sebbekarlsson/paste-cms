@@ -1,3 +1,6 @@
 {
-    "title": "a simple site"
+    "title": "a simple site",
+    "footer-address": "youraddress 12",
+    "footer-phone": "0000000000",
+    "footer-email": "john.doe@doecompany.com"
 }

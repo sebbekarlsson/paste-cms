@@ -1,0 +1,26 @@
+{% extends 'admin/admin_layout.html' %}
+
+
+{% block pane %}
+    <form method='POST' class='form'>
+        <label for='page_template'>
+            Username:
+            <input
+            {% if user %}
+                value='{{ user.username }}'
+            {% endif %}
+            type='text' name='user_username' id='user_username' placeholder='JohnDoe'/>
+        </label>
+        <label for='page_template'>
+            Password:
+            <input
+            {% if user %}
+                value='{{ user.password }}'
+            {% endif %}
+            type='password' name='user_password' id='user_password' placeholder='********'/>
+        </label>
+        <div class='push-down'>
+            <input class='button button-ok' type='submit' name='user_save' value='Save'/>
+        </div>
+    </form>
+{% endblock %}

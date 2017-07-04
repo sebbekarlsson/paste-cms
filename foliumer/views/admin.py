@@ -87,6 +87,28 @@ def show_pages():
 
     return render_template('admin/pages.html', pages=pages)
 
+@bp.route('/user/<user_id>', methods=['POST', 'GET'])
+@login_required
+def show_user(user_id):
+    user = None
+
+    if user_id != 'new':
+        user = db.collections.find_one({
+            'structure': '#User',
+            '_id': ObjectId(user_id)
+        })
+    
+    return render_template('admin/user.html', user=user)
+
+@bp.route('/users', methods=['POST', 'GET'])
+@login_required
+def show_users():
+    users = []
+
+    users = list(db.collections.find({'structure': '#User'}))
+
+    return render_template('admin/users.html', users=users)
+
 @bp.route('/settings', methods=['POST', 'GET'])
 @login_required
 def show_settings():
