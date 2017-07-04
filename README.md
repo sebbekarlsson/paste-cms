@@ -10,6 +10,10 @@
 * [Site admin creates routes / pages and selects which template these pages should use.](screenshots/admin_routes.png)
 * [Site admin can whenever she wants edit the editable areas using the wysiwyg editor.](screenshots/w.png)
 
+## Running the CMS in production
+> `coming soon`
+> Will put instructions here soon.
+
 ## Running the CMS as a developer
 * 0:
 > copy the `config.example.json` to `config.json` and edit it and fill in
