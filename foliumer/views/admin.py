@@ -122,6 +122,13 @@ def show_user(user_id):
     
     return render_template('admin/user.html', user=user)
 
+@bp.route('/media', methods=['POST', 'GET'])
+@login_required
+def show_media():
+    media = []
+
+    return render_template('admin/media.html', media=media)
+
 @bp.route('/users', methods=['POST', 'GET'])
 @login_required
 def show_users():
