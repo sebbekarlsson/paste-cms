@@ -41,6 +41,16 @@ class Page(DBObject):
         self.page_template = page_template
         self.editables = editables
 
+class Media(DBObject):
+    def __init__(
+            self,
+            path=None,
+            *args,
+            **kwargs
+            ):
+        DBObject.__init__(self, *args, **kwargs)
+        self.path = path
+
 class Option(DBObject):
     def __init__(
             self,
