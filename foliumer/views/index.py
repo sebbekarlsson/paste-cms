@@ -10,7 +10,7 @@ import json
 bp = Blueprint(__name__, __name__, template_folder=config['templates_dir'])
 
 @bp.route('/', defaults={'page_route': None})
-@bp.route('/<page_route>')
+@bp.route('/<path:page_route>')
 @installed_required
 def show(page_route):
     theme_db = {}

@@ -18,6 +18,20 @@ def show_setup():
     if is_installed():
         return redirect('/admin')
 
+    existing_index = db.collections.find_one({
+        'structure': '#Page',
+        'page_route': 'INDEX'
+    })
+
+    if not existing_index:
+        page = Page(
+            page_template='index.html',
+            page_route='INDEX',
+            editables=[]
+        )
+
+        db.collections.insert_one(page.export())
+
     return render_template('admin/setup.html')
 
 @bp.route('/')
