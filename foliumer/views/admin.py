@@ -95,6 +95,9 @@ def show_pages():
                 })
 
                 if existing:
+                    if 'page_route' not in existing:
+                        existing['page_route'] = ''
+
                     if existing['page_route'] != 'INDEX':
                         db.collections.remove({
                             'structure': '#Page',
