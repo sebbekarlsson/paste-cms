@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect
 from foliumer.mongo import db
-from foliumer.models import Page, ThemeDBOption
+from foliumer.models import Page, ThemeDBOption, Media
 from foliumer.config import config
 from foliumer.utils import login_required, is_installed, get_theme_db
 import glob
@@ -8,6 +8,8 @@ import ntpath
 from bson.objectid import ObjectId
 import pymongo
 import json
+import os
+from werkzeug.utils import secure_filename
 
 
 bp = Blueprint(__name__, __name__, template_folder='templates',
@@ -128,9 +130,21 @@ def show_user(user_id):
 @bp.route('/media', methods=['POST', 'GET'])
 @login_required
 def show_media():
-    media = []
+    if request.method == 'POST':
+        if 'upload_file' in request.files:
+            file = request.files['upload_file']
+            filename = secure_filename(file.filename)
 
-    return render_template('admin/media.html', media=media)
+            file.save(os.path.join(config['uploads_dir'], filename))
+
+            media = Media(path=filename)
+            db.collections.insert_one(media.export())
+
+    medias = db.collections.find({
+        'structure': '#Media'
+    })
+
+    return render_template('admin/media.html', medias=medias)
 
 @bp.route('/users', methods=['POST', 'GET'])
 @login_required

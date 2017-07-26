@@ -352,6 +352,25 @@
     border-bottom-color: lightgray;
     border-bottom-width: 1px; }
 
+.paste-styled .media-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .paste-styled .media-gallery .media-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0.5rem; }
+    .paste-styled .media-gallery .media-item img {
+      max-width: 100%; }
+
 * {
   margin: 0;
   padding: 0; }

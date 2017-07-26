@@ -1,0 +1,29 @@
+@import 'mixins.scss';
+
+
+.paste-styled {
+    .media-gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .media-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            padding: 0.5rem;
+            border-color: lightgray;
+            border-style: solid;
+            border-width: 1px;
+            margin: 0.5rem;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}

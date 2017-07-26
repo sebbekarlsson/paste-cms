@@ -1,4 +1,5 @@
 {
     "templates_dir": "/home/ianertson/workspace/foliumer/examples/example-project",
-    "database": "foliumer"
+    "database": "foliumer",
+    "uploads_dir": "/tmp"
 }
