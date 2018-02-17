@@ -1,6 +1,8 @@
 # PASTE-CMS
 > A simple copy-paste, edit-text-only cms.
 
+> __NO LONGER MAINTAINED, PLEASE SEE:__ [https://github.com/sebbekarlsson/nilms](https://github.com/sebbekarlsson/nilms)
+
 > All this CMS provides is route / page management and a wysiwyg editor
 > for editable areas created by the template developer.
 
